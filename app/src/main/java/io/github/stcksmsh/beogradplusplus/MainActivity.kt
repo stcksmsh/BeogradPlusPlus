@@ -1,20 +1,26 @@
 package io.github.stcksmsh.beogradplusplus
 
+import android.content.pm.ActivityInfo
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import io.github.stcksmsh.beogradplusplus.ui.theme.BeogradPlusPlusTheme
+import java.util.*
 
+
+val PhoneNumber = "381612987643"
+val Price: String = "100"
+val NumberOfMessages = 10
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,51 +28,53 @@ class MainActivity : ComponentActivity() {
             BeogradPlusPlusTheme {
                 // A surface container using the 'background' color from the theme
                 Surface(modifier = Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background) {
-                    Greeting("14823")
+                    Greeting()
                 }
             }
         }
+        this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT)
     }
 }
 
 @Composable
-fun Greeting(broj: String, modifier: Modifier = Modifier) {
+fun Greeting(modifier: Modifier = Modifier) {
     Column(
         modifier = Modifier
-            .background(Color.Transparent)
+            .background(Color.DarkGray)
             .fillMaxSize()
+            .padding(top = 20.dp)
     ){
-        Text(
-            text = "${broj}",
-            modifier = Modifier
-                .background(Color.Gray)
-                .padding(30.dp)
-                .fillMaxWidth()
-        )
+        TopBar()
         Box(
             modifier = Modifier
                 .fillMaxSize()
-                .background(Color.Red)
+                .background(Color.Transparent)
         ) {
-            Column(
-                verticalArrangement = Arrangement.SpaceEvenly,
+            LazyColumn (
+                verticalArrangement = Arrangement.spacedBy(35.dp),
+                reverseLayout = true,
                 modifier = Modifier
                     .align(Alignment.TopStart)
-                    .background(Color.DarkGray)
-                    .padding(30.dp)
+                    .padding(top = 30.dp, bottom = 70.dp, start = 20.dp, end = 20.dp)
                     .fillMaxSize()
             ){
-                Text(text = "Poruka 1")
-                Text(text = "Poruka 2")
-                Text(text = "Poruka 3")
+                var time = Calendar.getInstance().time
+                items(NumberOfMessages){ it ->
+                    Message(
+                        dayText = "today",
+                        phoneNumber = "9011",
+                        time = time,
+                        ticketNumber = "${IDGenerator(time)}"
+                    )
+                }
             }
-            Text(
-                text = "Kucanje",
+            MessageBar(
                 modifier = Modifier
-                    .background(Color.LightGray)
-                    .padding(30.dp)
-                    .align(Alignment.BottomStart)
                     .fillMaxWidth()
+                    .background(Color.DarkGray)
+                    .align(Alignment.BottomStart)
+                    .padding(start = 30.dp, end = 30.dp, top = 15.dp, bottom = 15.dp)
+
             )
         }
     }
@@ -76,6 +84,6 @@ fun Greeting(broj: String, modifier: Modifier = Modifier) {
 @Composable
 fun GreetingPreview() {
     BeogradPlusPlusTheme {
-        Greeting("Kosta")
+        Greeting()
     }
 }
