@@ -16,6 +16,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import io.github.stcksmsh.beogradplusplus.ui.theme.BeogradPlusPlusTheme
 import java.util.*
+import java.util.concurrent.ThreadLocalRandom
 
 
 val PhoneNumber = "381612987643"
@@ -50,6 +51,7 @@ fun Greeting(modifier: Modifier = Modifier) {
                 .fillMaxSize()
                 .background(Color.Transparent)
         ) {
+            var time = Calendar.getInstance().time
             LazyColumn (
                 verticalArrangement = Arrangement.spacedBy(35.dp),
                 reverseLayout = true,
@@ -58,7 +60,6 @@ fun Greeting(modifier: Modifier = Modifier) {
                     .padding(top = 30.dp, bottom = 70.dp, start = 20.dp, end = 20.dp)
                     .fillMaxSize()
             ){
-                var time = Calendar.getInstance().time
                 items(NumberOfMessages){ it ->
                     Message(
                         dayText = "today",
@@ -66,6 +67,9 @@ fun Greeting(modifier: Modifier = Modifier) {
                         time = time,
                         ticketNumber = "${IDGenerator(time)}"
                     )
+                    while(time.hours >= 23 || time.hours <= 6){
+                        time = Date(time.time - ThreadLocalRandom.current().nextInt(3*60*60, 6*60*60) * 1000)
+                    }
                 }
             }
             MessageBar(

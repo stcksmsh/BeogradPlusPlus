@@ -77,7 +77,7 @@ fun Message(dayText: String, phoneNumber: String, time: Date, ticketNumber: Stri
         )
 
         Text(
-            text = SimpleDateFormat("hh:mm").format(time),
+            text = SimpleDateFormat("HH:mm").format(time),
             fontSize = 15.sp,
             modifier = Modifier
                 .padding(start = 13.dp, end = 13.dp)
