@@ -1,6 +1,5 @@
 package io.github.stcksmsh.beogradplusplus
 
-import java.text.SimpleDateFormat
 import java.util.Date
 
 /*  Ticket ID is 10 digit number
@@ -13,9 +12,11 @@ import java.util.Date
 *   So I will take the current time in millis, subtract the time of 29.08.2023...
 *   and then divide by 2400 to get the number by which to increase 3709567
 */
+val referenceMillis = 1693283977000
+val referenceID = 3709567
+val milisPerTicket = 2400
+
 fun IDGenerator(currentDate: Date): String{
-    val idNumber = 3709567 + (currentDate.time - Date(2023, 8, 29, 6, 39, 37).time) / 2400
-    var idString = "${idNumber}"
-    return idString
-//    return idString.padStart(10 - idString.length, '0')
+    val id = referenceID + (currentDate.time - referenceMillis) / milisPerTicket
+    return "${id}".padStart(10, '0')
 }

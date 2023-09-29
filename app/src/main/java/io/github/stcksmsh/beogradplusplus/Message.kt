@@ -62,7 +62,7 @@ fun Message(dayText: String, phoneNumber: String, time: Date, ticketNumber: Stri
                 withStyle(style = SpanStyle(textDecoration = TextDecoration.Underline)){append("${validDate}")}
                 append(" ")
                 withStyle(style = SpanStyle(textDecoration = TextDecoration.Underline)){append("${validTime}")}
-                append(".\nKarta broj:")
+                append(".\nKarta broj: ")
                 withStyle(style = SpanStyle(textDecoration = TextDecoration.Underline)){append("${ticketNumber}")}
                 append(".\nPlacanjem operateru izmirujete dugovanja za ovu kartu prema JKP Naplata prevozne usluge Beograd.\nSacuvajte ovu poruku.")
             },
