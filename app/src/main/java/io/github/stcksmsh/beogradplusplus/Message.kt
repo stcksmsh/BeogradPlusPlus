@@ -57,7 +57,7 @@ fun Message(dayText: String, phoneNumber: String, time: Date, ticketNumber: Stri
         Text(
             text = buildAnnotatedString {
                 append("U Beogradu, za broj telefona ")
-                withStyle(style = SpanStyle(textDecoration = TextDecoration.Underline)){append("${phoneNumber}")}
+                withStyle(style = SpanStyle(textDecoration = TextDecoration.Underline)){append("${phoneNumber.subSequence(0,phoneNumber.length-3)}xxx")}
                 append(" ste kupili VREMENSKU KARTU OD 90 MINUTA U ZONI C po ceni od ${Price} din + osnovna cena poruke koja vazi do ")
                 withStyle(style = SpanStyle(textDecoration = TextDecoration.Underline)){append("${validDate}")}
                 append(" ")

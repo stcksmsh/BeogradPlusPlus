@@ -62,7 +62,7 @@ fun Greeting(modifier: Modifier = Modifier) {
                 items(NumberOfMessages){ it ->
                     Message(
                         dayText = "today",
-                        phoneNumber = "9011",
+                        phoneNumber = PhoneNumber,
                         time = time,
                         ticketNumber = "${IDGenerator(time)}"
                     )
