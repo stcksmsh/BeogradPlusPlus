@@ -36,6 +36,14 @@ class MainActivity : ComponentActivity() {
         this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT)
     }
 }
+fun getAndChange(time: Date): Date{
+    var prev: Date = time
+    do{
+        time.apply { this.time = time.time - ThreadLocalRandom.current().nextInt(3*60*60, 6*60*60) * 1000 }
+//        time = Date(time.time - ThreadLocalRandom.current().nextInt(3*60*60, 6*60*60) * 1000)
+    }while(time.hours >= 23 || time.hours <= 6)
+    return prev
+}
 
 @Composable
 fun Greeting(modifier: Modifier = Modifier) {
@@ -65,11 +73,8 @@ fun Greeting(modifier: Modifier = Modifier) {
                         dayText = "today",
                         phoneNumber = PhoneNumber,
                         time = time,
-                        ticketNumber = "${IDGenerator(time)}"
+                        ticketNumber = "${IDGenerator(getAndChange(time))}"
                     )
-                    while(time.hours >= 23 || time.hours <= 6){
-                        time = Date(time.time - ThreadLocalRandom.current().nextInt(3*60*60, 6*60*60) * 1000)
-                    }
                 }
             }
             MessageBar(
