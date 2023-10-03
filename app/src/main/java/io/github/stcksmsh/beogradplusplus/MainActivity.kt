@@ -36,21 +36,6 @@ class MainActivity : ComponentActivity() {
         this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT)
     }
 }
-fun getAndChange(time: Date): Date{
-    var prev: Date = time
-    do{
-        time.apply { this.time = time.time - ThreadLocalRandom.current().nextInt(3*60*60, 6*60*60) * 1000 }
-//        time = Date(time.time - ThreadLocalRandom.current().nextInt(3*60*60, 6*60*60) * 1000)
-    }while(time.hours >= 23 || time.hours <= 6)
-    return prev
-}
-
-fun createDayText(currentTime: Date, textTime: Date): String{
-    var curDay: Int = currentTime.day; var curMon: Int = currentTime.month; var curYr: Int = currentTime.year
-    var txtDay: Int = textTime.day; var txtMon: Int = textTime.month; var txtYr: Int = textTime.year
-
-    return "today"
-}
 
 @Composable
 fun Greeting(modifier: Modifier = Modifier) {
@@ -77,10 +62,8 @@ fun Greeting(modifier: Modifier = Modifier) {
             ){
                 items(NumberOfMessages){ it ->
                     Message(
-                        dayText = createDayText(time, getAndChange(time)),
-                        phoneNumber = PhoneNumber,
                         time = time,
-                        ticketNumber = "${IDGenerator(time)}"
+                        phoneNumber = PhoneNumber
                     )
                 }
             }
@@ -90,7 +73,6 @@ fun Greeting(modifier: Modifier = Modifier) {
                     .background(Color.DarkGray)
                     .align(Alignment.BottomStart)
                     .padding(start = 30.dp, end = 30.dp, top = 15.dp, bottom = 15.dp)
-
             )
         }
     }

@@ -18,10 +18,32 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import java.text.SimpleDateFormat
 import java.util.*
+import java.util.concurrent.ThreadLocalRandom
 
+fun createDayText(currentTime: Date, textTime: Date): String{
+    var curDay: Int = currentTime.day; var curMon: Int = currentTime.month; var curYr: Int = currentTime.year
+    var txtDay: Int = textTime.day; var txtMon: Int = textTime.month; var txtYr: Int = textTime.year
+    if(curDay == txtDay && curMon == txtMon && curYr == txtYr)
+        return "today"
+
+    return "yesterday"
+}
+
+
+fun generateNewTime(time: Date): Date{
+    var newTime: Date = time
+    do{
+        /// from 3 to 24 hours in the past
+        newTime = Date(newTime.time - ThreadLocalRandom.current().nextInt(3*60*60, 24*60*60) * 1000)
+    }while(newTime.hours >= 23 || newTime.hours <= 6)
+    return newTime
+}
 @Composable
-fun Message(dayText: String, phoneNumber: String, time: Date, ticketNumber: String){
-    var expTime = Date(time.time + 90 * 60 * 1000)
+fun Message(time: Date, phoneNumber: String){
+    val ticketTime: Date = generateNewTime(time)
+    val dayText: String = createDayText(time, ticketTime)
+    val expTime = Date(time.time + 90 * 60 * 1000)
+    val ticketNumber: String = IDGenerator(time)
     val validTime = SimpleDateFormat("HH:mm:ss").format(expTime)
     val validDate = SimpleDateFormat("dd.MM.yyyy").format(expTime)
     Column(
@@ -83,4 +105,5 @@ fun Message(dayText: String, phoneNumber: String, time: Date, ticketNumber: Stri
                 .padding(start = 13.dp, end = 13.dp)
         )
     }
+    time.apply { this.time = ticketTime.time }
 }
