@@ -45,6 +45,13 @@ fun getAndChange(time: Date): Date{
     return prev
 }
 
+fun createDayText(currentTime: Date, textTime: Date): String{
+    var curDay: Int = currentTime.day; var curMon: Int = currentTime.month; var curYr: Int = currentTime.year
+    var txtDay: Int = textTime.day; var txtMon: Int = textTime.month; var txtYr: Int = textTime.year
+
+    return "today"
+}
+
 @Composable
 fun Greeting(modifier: Modifier = Modifier) {
     Column(
@@ -70,10 +77,10 @@ fun Greeting(modifier: Modifier = Modifier) {
             ){
                 items(NumberOfMessages){ it ->
                     Message(
-                        dayText = "today",
+                        dayText = createDayText(time, getAndChange(time)),
                         phoneNumber = PhoneNumber,
                         time = time,
-                        ticketNumber = "${IDGenerator(getAndChange(time))}"
+                        ticketNumber = "${IDGenerator(time)}"
                     )
                 }
             }

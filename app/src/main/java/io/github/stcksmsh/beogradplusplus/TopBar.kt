@@ -17,6 +17,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.unit.dp
+import kotlin.system.exitProcess
 
 @Composable
 fun TopBar(){
@@ -34,7 +35,11 @@ fun TopBar(){
             horizontalArrangement = Arrangement.spacedBy(10.dp),
             verticalAlignment = Alignment.CenterVertically,
         ){
-            Icon(Icons.Default.ArrowBack , contentDescription = "testing")
+            IconButton(
+                onClick = { exitProcess(0) }
+            ){
+                Icon(Icons.Default.ArrowBack , contentDescription = "testing")
+            }
             Text(text = "9011         ")
         }
         Row(
