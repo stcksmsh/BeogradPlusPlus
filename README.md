@@ -1,21 +1,21 @@
-[![Github All Releases](https://img.shields.io/github/downloads/stcksmsh/BeogradPlusPlus/total.svg?style=for-the-badge)](https://github.com/stcksmsh/BeogradPlusPlus/releases)     [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)     [![Linkedin](https://img.shields.io/badge/Linkedin-Kosta_Vukicevic-blue.svg?style=for-the-badge)](
+[![Github All Releases](https://img.shields.io/github/downloads/stcksmsh/BeogradPlusPlus/total.svg?style=for-the-badge)](https://github.com/stcksmsh/BeogradPlusPlus/releases)     [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)     [![Linkedin](https://img.shields.io/badge/Linkedin-Kosta_Vukicevic-blue.svg?style=for-the-badge)](
 https://www.linkedin.com/in/kostavukicevic)
 
 # BeogradPlusPlus
 
-![BeogradPlusPlus ikona](app/src/main/ic_launcher-playstore.png)
+![BeogradPlusPlus ikonica](app/src/main/ic_launcher-playstore.png)
 
-BeogradPlusPlus je korisnički prijateljska aplikacija koja revolucionizuje javni prevoz u Beogradu tako što ga čini potpuno besplatnim za sve korisnike.
+BeogradPlusPlus je korisnički prijateljska aplikacija koja je razvijena isključivo radi ukazivanja na nedostatke u novom sistemu naplate JKP Gradskog saobraćajnog preduzeća Beograd.
 
 ## Funkcija
 
-- **Besplatan Javni Prevoz**: Uživajte u neograničenom i besplatnom pristupu beogradskom javnom prevozu.
+- Aplikacija simulira "razgovor" sa brojem 9011 u kojem je korisnik upravo uspješno "kupio" odgovarajuću kartu kao i neke u prošlosti, radi vjerodostojnosti
 
 ## Početak
 
 ### Instalacija
 
-1. Preuzmite BeogradPlusPlus sa [ive stranice](github.com/stcksmsh/BeogradPlusPlus).
+1. Preuzmite BeogradPlusPlus sa [ove stranice](github.com/stcksmsh/BeogradPlusPlus).
 
 2. Instalirajte aplikaciju na svoj uređaj.
 
@@ -23,11 +23,11 @@ BeogradPlusPlus je korisnički prijateljska aplikacija koja revolucionizuje javn
 
 1. Pokrenite BeogradPlusPlus.
 
-2. Unesite svoj broj telefona radi registracije.
+2. Unesite svoj broj telefona u podesavanjima (opciono).
 
-3. Izaberite željeni tip karte (npr. pojedinačna vožnja, dnevna karta, nedeljna karta, itd.).
+3. Izaberite željeni tip karte i oblast (podrazumevana karta traje 90 minuta, i važi za zonu C).
 
-4. Počnite koristiti javni prevoz u Beogradu besplatno i uživajte u prednostima BeogradPlusPlus aplikacije!
+# <span style="color: red;">Molimo vas da imate na umu da je aplikacija razvijena isključivo radi demonstracije  za potrebe učenja programskog jezika Kotlin i ne podržavamo njenu upotrebu za izbegavanje plaćanja karata.</span>
 
 ## Povratne informacije
 
@@ -39,4 +39,7 @@ Ovaj projekat je licenciran pod [MIT Licencom](LICENSE).
 
 ---
 
-Preuzmite BeogradPlusPlus sada i doživite besplatan javni prevoz u Beogradu!
+BeogradPlusPlus aplikacija je razvijena isključivo za potrebe učenja programskog jezika Kotlin, i mi naglašavamo da ne podržavamo njenu upotrebu za izbegavanje plaćanja karata u javnom prevozu.
+## Pravno Obaveštenje
+
+Molimo vas da pročitate naše [Pravno Obaveštenje](LEGAL_NOTICE.md) pre korišćenja ovog softvera.
