@@ -1,4 +1,5 @@
-[![Github All Releases](https://img.shields.io/github/downloads/stcksmsh/BeogradPlusPlus/total.svg)]()
+[![Github All Releases](https://img.shields.io/github/downloads/stcksmsh/BeogradPlusPlus/total.svg?style=for-the-badge)](https://github.com/stcksmsh/BeogradPlusPlus/releases)[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 # BeogradPlusPlus
 
 ![BeogradPlusPlus ikona](app/src/main/ic_launcher-playstore.png)
