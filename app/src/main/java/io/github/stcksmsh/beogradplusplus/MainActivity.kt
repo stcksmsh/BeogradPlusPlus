@@ -11,10 +11,12 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.focus.FocusRequester
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import io.github.stcksmsh.beogradplusplus.ui.theme.BeogradPlusPlusTheme
+import kotlinx.coroutines.job
 import java.util.*
 import java.util.concurrent.ThreadLocalRandom
 
@@ -35,16 +37,18 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun Greeting(modifier: Modifier = Modifier) {
-    val PhoneNumber = "381612987643"
+    val PhoneNumber = remember { mutableStateOf("381" + NumberGenerator().substring(1))}
     var Ticket = remember { mutableStateOf("C90") }
     val NumberOfMessages = 10
+    val focusRequester = remember{ FocusRequester() }
+
     Column(
         modifier = Modifier
             .background(Color.DarkGray)
             .fillMaxSize()
             .padding(top = 20.dp)
     ){
-        TopBar(Ticket)
+        TopBar(Ticket, PhoneNumber)
         Box(
             modifier = Modifier
                 .fillMaxSize()
@@ -63,7 +67,7 @@ fun Greeting(modifier: Modifier = Modifier) {
                     Message(
                         time = time,
                         ticket = Ticket,
-                        phoneNumber = PhoneNumber
+                        phoneNumber = PhoneNumber.value
                     )
                 }
             }
