@@ -5,11 +5,11 @@ https://www.linkedin.com/in/kostavukicevic)
 
 ![BeogradPlusPlus ikonica](app/src/main/ic_launcher-playstore.png)
 
-BeogradPlusPlus je korisnički prijateljska aplikacija koja je razvijena isključivo radi ukazivanja na nedostatke u novom sistemu naplate JKP Gradskog saobraćajnog preduzeća Beograd.
+BeogradPlusPlus je aplikacija koja je razvijena isključivo radi ukazivanja na nedostatke u novom sistemu naplate JKP Gradskog saobraćajnog preduzeća Beograd.
 
 ## Funkcija
 
-- Aplikacija simulira "razgovor" sa brojem 9011 u kojem je korisnik upravo uspješno "kupio" odgovarajuću kartu kao i neke u prošlosti, radi vjerodostojnosti
+- Aplikacija simulira tekstualno "ćaskanje" sa brojem 9011 u kojem je korisnik upravo uspješno "kupio" odgovarajuću kartu kao i neke u prošlosti, radi vjerodostojnosti
 
 ## Početak
 
@@ -23,15 +23,11 @@ BeogradPlusPlus je korisnički prijateljska aplikacija koja je razvijena isklju�
 
 1. Pokrenite BeogradPlusPlus.
 
-2. Unesite svoj broj telefona u podesavanjima (opciono).
+2. ~~Unesite svoj broj telefona u podesavanjima (opciono).~~
 
-3. Izaberite željeni tip karte i oblast (podrazumevana karta traje 90 minuta, i važi za zonu C).
+3. ~~Izaberite željeni tip karte i oblast (podrazumevana karta traje 90 minuta, i važi za zonu C).~~
 
-# <span style="color: red;">Molimo vas da imate na umu da je aplikacija razvijena isključivo radi demonstracije  za potrebe učenja programskog jezika Kotlin i ne podržavamo njenu upotrebu za izbegavanje plaćanja karata.</span>
-
-## Povratne informacije
-
-Cenimo vaše povratne informacije! Ako naiđete na bilo kakve probleme ili imate sugestije, slobodno [kontaktirajte naš tim za podršku](mailto:support@beogradplusplus.com).
+# Molimo vas da imate na umu da je aplikacija razvijena isključivo radi demonstracije niske bezbjednosti novog sistema naplate u GSP-u i ne podržavamo njenu upotrebu za izbegavanje plaćanja karata.
 
 ## Licenca
 

@@ -20,6 +20,8 @@ import java.text.SimpleDateFormat
 import java.util.*
 import java.util.concurrent.ThreadLocalRandom
 
+val dayInMillis = 24 * 60 * 60 * 1000
+
 fun createDayText(currentTime: Date, textTime: Date): String{
     var curDay: Int = currentTime.day; var curMon: Int = currentTime.month; var curYr: Int = currentTime.year
     var txtDay: Int = textTime.day; var txtMon: Int = textTime.month; var txtYr: Int = textTime.year
@@ -31,18 +33,47 @@ fun createDayText(currentTime: Date, textTime: Date): String{
 
 
 fun generateNewTime(time: Date): Date{
-    var newTime: Date = time
+    var newTime: Date = Date(time.time)
     do{
-        /// from 3 to 24 hours in the past
         newTime = Date(newTime.time - ThreadLocalRandom.current().nextInt(3*60*60, 24*60*60) * 1000)
     }while(newTime.hours >= 23 || newTime.hours <= 6)
     return newTime
 }
 @Composable
-fun Message(time: Date, phoneNumber: String){
+fun Message(time: Date, ticket:String,  phoneNumber: String){
     val ticketTime: Date = generateNewTime(time)
     val dayText: String = createDayText(time, ticketTime)
-    val expTime = Date(time.time + 90 * 60 * 1000)
+    val price:String = when(ticket){
+        "A90" -> "50"
+        "B90" -> "50"
+        "C90" -> "100"
+        "A1" -> "120"
+        "B1" -> "120"
+        "C1" -> "150"
+        "A7" -> "800"
+        "B7" -> "800"
+        "C7" -> "1000"
+        "A30" -> "2200"
+        "B30" -> "2200"
+        "C30" -> "3300"
+        else -> "ERROR"
+    }
+    val duration:Int = when(ticket){
+        "A90" -> dayInMillis / 16
+        "B90" -> dayInMillis / 16
+        "C90" -> dayInMillis / 16
+        "A1" -> dayInMillis
+        "B1" -> dayInMillis
+        "C1" -> dayInMillis
+        "A7" -> 7 * dayInMillis
+        "B7" -> 7 * dayInMillis
+        "C7" -> 7 * dayInMillis
+        "A30" -> 30 * dayInMillis
+        "B30" -> 30 * dayInMillis
+        "C30" -> 30 * dayInMillis
+        else -> 0
+    }
+    val expTime = Date(time.time + duration)
     val ticketNumber: String = IDGenerator(time)
     val validTime = SimpleDateFormat("HH:mm:ss").format(expTime)
     val validDate = SimpleDateFormat("dd.MM.yyyy").format(expTime)
@@ -58,17 +89,17 @@ fun Message(time: Date, phoneNumber: String){
         )
 
         Text(
-            text = "C90",
+            text = ticket,
             fontSize = 17.sp,
             textAlign = TextAlign.End,
             color = Color.White,
             modifier = Modifier
                 .align(Alignment.End)
                 .fillMaxSize()
-                .padding(start = 270.dp)
+                .padding(start = 250.dp)
                 .clip(RoundedCornerShape(10.dp))
                 .background(Color.Gray)
-                .padding(15.dp)
+                .padding(top = 15.dp, bottom = 15.dp, start = 0.dp, end = 15.dp)
         )
 
         Text(
@@ -80,7 +111,12 @@ fun Message(time: Date, phoneNumber: String){
             text = buildAnnotatedString {
                 append("U Beogradu, za broj telefona ")
                 withStyle(style = SpanStyle(textDecoration = TextDecoration.Underline)){append("${phoneNumber.subSequence(0,phoneNumber.length-3)}xxx,")}
-                append(" ste kupili VREMENSKU KARTU OD 90 MINUTA U ZONI C po ceni od ${Price} din + osnovna cena poruke, koja vazi do ")
+                append(" ste kupili VREMENSKU KARTU OD ${ticket.substring(1)} ${
+                    when(ticket[1]) {
+                        '9' -> "MINUTA"
+                        else -> "DANA"
+                    }
+                } U ZONI ${ticket[0]} po ceni od ${price} din + osnovna cena poruke, koja vazi do ")
                 withStyle(style = SpanStyle(textDecoration = TextDecoration.Underline)){append("${validDate}")}
                 append(" ")
                 withStyle(style = SpanStyle(textDecoration = TextDecoration.Underline)){append("${validTime}")}

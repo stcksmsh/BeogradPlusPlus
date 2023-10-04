@@ -8,7 +8,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material3.*
-import androidx.compose.runtime.Composable
+import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -18,10 +18,6 @@ import io.github.stcksmsh.beogradplusplus.ui.theme.BeogradPlusPlusTheme
 import java.util.*
 import java.util.concurrent.ThreadLocalRandom
 
-
-val PhoneNumber = "381612987643"
-val Price: String = "100"
-val NumberOfMessages = 10
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,13 +35,16 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun Greeting(modifier: Modifier = Modifier) {
+    val PhoneNumber = "381612987643"
+    var Ticket by remember { mutableStateOf("C90") }
+    val NumberOfMessages = 10
     Column(
         modifier = Modifier
             .background(Color.DarkGray)
             .fillMaxSize()
             .padding(top = 20.dp)
     ){
-        TopBar()
+        TopBar(Ticket)
         Box(
             modifier = Modifier
                 .fillMaxSize()
@@ -63,6 +62,7 @@ fun Greeting(modifier: Modifier = Modifier) {
                 items(NumberOfMessages){ it ->
                     Message(
                         time = time,
+                        ticket = Ticket,
                         phoneNumber = PhoneNumber
                     )
                 }

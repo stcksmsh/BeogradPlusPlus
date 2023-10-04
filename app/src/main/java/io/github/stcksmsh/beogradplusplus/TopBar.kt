@@ -20,7 +20,7 @@ import androidx.compose.ui.unit.dp
 import kotlin.system.exitProcess
 
 @Composable
-fun TopBar(){
+fun TopBar(Ticket: String){
     Row(
         horizontalArrangement = Arrangement.SpaceBetween,
         verticalAlignment = Alignment.CenterVertically,
@@ -46,18 +46,28 @@ fun TopBar(){
             horizontalArrangement = Arrangement.spacedBy(10.dp),
             verticalAlignment = Alignment.CenterVertically,
         ){
-            var expanded by remember { mutableStateOf(false) }
+            var expanded1 by remember { mutableStateOf(false) }
+            var expanded2 by remember { mutableStateOf(false) }
             Icon(Icons.Outlined.Call, contentDescription = "testing")
-            IconButton(onClick = {expanded = !expanded}){
+            IconButton(onClick = {expanded1 = !expanded1}){
                 Icon(Icons.Outlined.Settings , contentDescription = "testing")
             }
             DropdownMenu(
-                expanded = expanded,
-                onDismissRequest = {expanded = false}
+                expanded = expanded1,
+                onDismissRequest = {expanded1 = false;expanded2 = false}
             ){
-                BasicTextField(
-                    value = "test",
-                    onValueChange = { print("CHANGES") }
+                DropdownMenuItem(
+                    text = {
+                        Button(onClick = {expanded2 = !expanded2}){
+                            Text("Change ticket")
+                        }
+                        DropdownMenu(expanded = expanded2, onDismissRequest = {expanded2 =false}) {
+                            DropdownMenuItem(
+                                text = { Text("A90") },
+                                onClick = { Ticket.apply { this.replace(".*", "A90") };expanded2 = false })
+                        }
+                    },
+                    onClick = {expanded1 = false;expanded2 = false}
                 )
             }
         }
