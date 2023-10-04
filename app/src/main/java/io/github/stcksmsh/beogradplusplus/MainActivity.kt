@@ -36,7 +36,7 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun Greeting(modifier: Modifier = Modifier) {
     val PhoneNumber = "381612987643"
-    var Ticket by remember { mutableStateOf("C90") }
+    var Ticket = remember { mutableStateOf("C90") }
     val NumberOfMessages = 10
     Column(
         modifier = Modifier

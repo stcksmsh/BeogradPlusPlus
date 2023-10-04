@@ -5,7 +5,6 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.text.BasicTextField
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material.icons.outlined.Call
@@ -15,12 +14,11 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.unit.dp
 import kotlin.system.exitProcess
 
 @Composable
-fun TopBar(Ticket: String){
+fun TopBar(Ticket: MutableState<String>){
     Row(
         horizontalArrangement = Arrangement.SpaceBetween,
         verticalAlignment = Alignment.CenterVertically,
@@ -46,28 +44,31 @@ fun TopBar(Ticket: String){
             horizontalArrangement = Arrangement.spacedBy(10.dp),
             verticalAlignment = Alignment.CenterVertically,
         ){
-            var expanded1 by remember { mutableStateOf(false) }
-            var expanded2 by remember { mutableStateOf(false) }
+            var expandedMainMenu by remember { mutableStateOf(false) }
+            val ticketTypes = arrayOf("A90", "B90", "C90", "A1", "B1", "C1", "A7", "B7", "C7", "A30", "B30", "C30")
             Icon(Icons.Outlined.Call, contentDescription = "testing")
-            IconButton(onClick = {expanded1 = !expanded1}){
+            IconButton(onClick = {expandedMainMenu = !expandedMainMenu}){
                 Icon(Icons.Outlined.Settings , contentDescription = "testing")
             }
             DropdownMenu(
-                expanded = expanded1,
-                onDismissRequest = {expanded1 = false;expanded2 = false}
+                expanded = expandedMainMenu,
+                onDismissRequest = {expandedMainMenu = false}
             ){
+                var expandedTicketMenu by remember{ mutableStateOf(false) }
                 DropdownMenuItem(
                     text = {
-                        Button(onClick = {expanded2 = !expanded2}){
+                        Button(onClick = {expandedTicketMenu = !expandedTicketMenu}){
                             Text("Change ticket")
                         }
-                        DropdownMenu(expanded = expanded2, onDismissRequest = {expanded2 =false}) {
-                            DropdownMenuItem(
-                                text = { Text("A90") },
-                                onClick = { Ticket.apply { this.replace(".*", "A90") };expanded2 = false })
+                        DropdownMenu(expanded = expandedTicketMenu, onDismissRequest = {expandedTicketMenu =false}) {
+                            ticketTypes.forEach { item ->
+                                DropdownMenuItem(
+                                    text = { Text(item) },
+                                    onClick = { Ticket.apply { this.value= item };expandedTicketMenu = false })
+                            }
                         }
                     },
-                    onClick = {expanded1 = false;expanded2 = false}
+                    onClick = {expandedMainMenu = false;expandedTicketMenu = false}
                 )
             }
         }
