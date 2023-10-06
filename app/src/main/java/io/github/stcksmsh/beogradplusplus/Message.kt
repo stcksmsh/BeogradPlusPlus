@@ -24,12 +24,13 @@ import java.util.concurrent.ThreadLocalRandom
 val dayInMillis = 24 * 60 * 60 * 1000
 
 fun createDayText(currentTime: Date, textTime: Date): String{
-    var curDay: Int = currentTime.day; var curMon: Int = currentTime.month; var curYr: Int = currentTime.year
-    var txtDay: Int = textTime.day; var txtMon: Int = textTime.month; var txtYr: Int = textTime.year
-    if(curDay == txtDay && curMon == txtMon && curYr == txtYr)
+    var curDayInMIllis: Long = currentTime.time - (currentTime.hours * 60 * 60 + currentTime.minutes * 60 + currentTime.seconds) * 1000
+    var txtDayInMIllis: Long = textTime.time - (textTime.hours * 60 * 60 + textTime.minutes * 60 + textTime.seconds) * 1000
+    if(curDayInMIllis == txtDayInMIllis)
         return "today"
-
-    return "yesterday"
+    if(curDayInMIllis - txtDayInMIllis >= 24 * 60 * 60 * 1000)
+        return "yesterday"
+    return "before that"
 }
 
 
@@ -55,8 +56,7 @@ fun generateNewTime(time: Date, ticketType: String): Date{
     return newTime
 }
 @Composable
-fun Message(time: Date, ticket: MutableState<String>, phoneNumber: String){
-    val ticketTime: Date = generateNewTime(time, ticket.value)
+fun Message(time: Date, ticketTime: Date, ticket: MutableState<String>, phoneNumber: String){
     val dayText: String = createDayText(time, ticketTime)
     val price:String = when(ticket.value){
         "A90" -> "50"
@@ -156,5 +156,5 @@ fun Message(time: Date, ticket: MutableState<String>, phoneNumber: String){
                 .padding(start = 13.dp, end = 13.dp)
         )
     }
-    time.apply { this.time = ticketTime.time }
+    ticketTime.apply { this.time = generateNewTime(ticketTime, ticket.value).time }
 }

@@ -55,6 +55,7 @@ fun Greeting(modifier: Modifier = Modifier) {
                 .background(Color.Transparent)
         ) {
             var time = Calendar.getInstance().time
+            var ticketTime = Calendar.getInstance().time
             LazyColumn (
                 verticalArrangement = Arrangement.spacedBy(35.dp),
                 reverseLayout = true,
@@ -66,6 +67,7 @@ fun Greeting(modifier: Modifier = Modifier) {
                 items(NumberOfMessages){ it ->
                     Message(
                         time = time,
+                        ticketTime = ticketTime,
                         ticket = Ticket,
                         phoneNumber = PhoneNumber.value
                     )
