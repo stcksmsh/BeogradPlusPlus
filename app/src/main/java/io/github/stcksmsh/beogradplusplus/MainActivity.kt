@@ -11,12 +11,10 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.focus.FocusRequester
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import io.github.stcksmsh.beogradplusplus.ui.theme.BeogradPlusPlusTheme
-import kotlinx.coroutines.job
 import java.util.*
 import java.util.concurrent.ThreadLocalRandom
 
@@ -35,12 +33,46 @@ class MainActivity : ComponentActivity() {
     }
 }
 
+
+fun generateNewTime(time: Date, ticket: String): Date{
+    var newTime: Date = Date(time.time)
+    val minRandHr = when(ticket[1]){
+        '9' -> 3
+        '1' -> 25
+        '7' -> 170
+        '3' -> 750
+        else -> 0
+    }
+    val maxRandHr = when(ticket[1]){
+        '9' -> 24
+        '1' -> 48
+        '7' -> 200
+        '3' -> 850
+        else -> 0
+    }
+    do{
+        newTime = Date(newTime.time - ThreadLocalRandom.current().nextInt(minRandHr*60*60, maxRandHr*60*60) * 1000)
+    }while(newTime.hours >= 23 || newTime.hours <= 6)
+    return newTime
+}
+fun getTicketTime(times: Array<Date?>, index: Int, ticket: String): Date{
+    var maxNotNullIndex: Int = index
+    while(times[maxNotNullIndex] == null) maxNotNullIndex --;
+    while(maxNotNullIndex < index){
+        times[maxNotNullIndex + 1] = generateNewTime(times[maxNotNullIndex]!!, ticket)
+        maxNotNullIndex ++
+    }
+    return times[index]!!
+}
+
 @Composable
 fun Greeting(modifier: Modifier = Modifier) {
-    val PhoneNumber = remember { mutableStateOf("381" + NumberGenerator().substring(1))}
-    var Ticket = remember { mutableStateOf("C90") }
-    val NumberOfMessages = 10
-    val focusRequester = remember{ FocusRequester() }
+    val phoneNumber = remember { mutableStateOf("381" + NumberGenerator().substring(1))}
+    val numberOfMessages = 10
+    var times: Array<Date?> = arrayOfNulls<Date>(numberOfMessages)
+    var ticket = remember { mutableStateOf("C90") }
+    var time = Calendar.getInstance().time
+    times[0] = time
 
     Column(
         modifier = Modifier
@@ -48,14 +80,12 @@ fun Greeting(modifier: Modifier = Modifier) {
             .fillMaxSize()
             .padding(top = 20.dp)
     ){
-        TopBar(Ticket, PhoneNumber)
+        TopBar(ticket, phoneNumber, times)
         Box(
             modifier = Modifier
                 .fillMaxSize()
                 .background(Color.Transparent)
         ) {
-            var time = Calendar.getInstance().time
-            var ticketTime = Calendar.getInstance().time
             LazyColumn (
                 verticalArrangement = Arrangement.spacedBy(35.dp),
                 reverseLayout = true,
@@ -64,12 +94,12 @@ fun Greeting(modifier: Modifier = Modifier) {
                     .padding(top = 30.dp, bottom = 70.dp, start = 20.dp, end = 20.dp)
                     .fillMaxSize()
             ){
-                items(NumberOfMessages){ it ->
+                items(numberOfMessages){ it ->
                     Message(
                         time = time,
-                        ticketTime = ticketTime,
-                        ticket = Ticket,
-                        phoneNumber = PhoneNumber.value
+                        ticketTime = getTicketTime(times, it, ticket.value),
+                        ticket = ticket,
+                        phoneNumber = phoneNumber.value
                     )
                 }
             }

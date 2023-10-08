@@ -24,37 +24,42 @@ import java.util.concurrent.ThreadLocalRandom
 val dayInMillis = 24 * 60 * 60 * 1000
 
 fun createDayText(currentTime: Date, textTime: Date): String{
-    var curDayInMIllis: Long = currentTime.time - (currentTime.hours * 60 * 60 + currentTime.minutes * 60 + currentTime.seconds) * 1000
-    var txtDayInMIllis: Long = textTime.time - (textTime.hours * 60 * 60 + textTime.minutes * 60 + textTime.seconds) * 1000
-    if(curDayInMIllis == txtDayInMIllis)
-        return "today"
-    if(curDayInMIllis - txtDayInMIllis >= 24 * 60 * 60 * 1000)
-        return "yesterday"
-    return "before that"
+    var curDay: Long = currentTime.time / ( 24 * 60 * 60 * 1000 )
+    var txtDay: Long = textTime.time / ( 24 * 60 * 60 * 1000 )
+    if(curDay == txtDay)
+        return "${SimpleDateFormat("HH:mm").format(textTime)}"
+    if(curDay == txtDay + 1)
+        return "Yesterday · ${SimpleDateFormat("HH:mm").format(textTime)}"
+    var dayInWeek: String = when(txtDay%7){
+        0L -> "Thursday"
+        1L -> "Friday"
+        2L -> "Saturday"
+        3L -> "Sunday"
+        4L -> "Monday"
+        5L -> "Tuesday"
+        6L -> "Wednesday"
+        else -> "DAY ERROR"
+    }
+    if(curDay - txtDay < 7)
+        return "${dayInWeek} · ${SimpleDateFormat("HH:mm").format(textTime)}"
+    var month: String = when(textTime.month){
+        0 -> "Jan"
+        1 -> "Feb"
+        2 -> "Mar"
+        3 -> "Apr"
+        4 -> "May"
+        5 -> "Jun"
+        6 -> "Jul"
+        7 -> "Aug"
+        8 -> "Sep"
+        9 -> "Oct"
+        10 -> "Nov"
+        11 -> "Dec"
+        else -> "MONTH ERROR"
+    }
+    return "${dayInWeek}, ${month} ${textTime.day + 1} · ${SimpleDateFormat("HH:mm").format(textTime)}"
 }
 
-
-fun generateNewTime(time: Date, ticketType: String): Date{
-    var newTime: Date = Date(time.time)
-    val minRandHr = when(ticketType[1]){
-        '9' -> 3
-        '1' -> 25
-        '7' -> 170
-        '3' -> 750
-        else -> 0
-    }
-    val maxRandHr = when(ticketType[1]){
-        '9' -> 24
-        '1' -> 48
-        '7' -> 200
-        '3' -> 850
-        else -> 0
-    }
-    do{
-        newTime = Date(newTime.time - ThreadLocalRandom.current().nextInt(minRandHr*60*60, maxRandHr*60*60) * 1000)
-    }while(newTime.hours >= 23 || newTime.hours <= 6)
-    return newTime
-}
 @Composable
 fun Message(time: Date, ticketTime: Date, ticket: MutableState<String>, phoneNumber: String){
     val dayText: String = createDayText(time, ticketTime)
@@ -88,7 +93,7 @@ fun Message(time: Date, ticketTime: Date, ticket: MutableState<String>, phoneNum
         "C30" -> 30 * dayInMillis
         else -> 0
     }
-    val expTime = Date(time.time + duration)
+    val expTime = Date(ticketTime.time + duration)
     val ticketNumber: String = IDGenerator(time)
     val validTime = SimpleDateFormat("HH:mm:ss").format(expTime)
     val validDate = SimpleDateFormat("dd.MM.yyyy").format(expTime)
@@ -97,7 +102,7 @@ fun Message(time: Date, ticketTime: Date, ticket: MutableState<String>, phoneNum
             .background(Color.Transparent)
     ){
         Text(
-            text = "${dayText} · ${SimpleDateFormat("HH:mm").format(time)}",
+            text = "${dayText}",
             textAlign = TextAlign.Center,
             modifier = Modifier
                 .fillMaxWidth()
@@ -150,11 +155,10 @@ fun Message(time: Date, ticketTime: Date, ticket: MutableState<String>, phoneNum
         )
 
         Text(
-            text = SimpleDateFormat("HH:mm").format(time),
+            text = SimpleDateFormat("HH:mm").format(ticketTime),
             fontSize = 15.sp,
             modifier = Modifier
                 .padding(start = 13.dp, end = 13.dp)
         )
     }
-    ticketTime.apply { this.time = generateNewTime(ticketTime, ticket.value).time }
 }

@@ -17,11 +17,12 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.unit.dp
+import java.util.*
 import kotlin.system.exitProcess
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun TopBar(Ticket: MutableState<String>, Number: MutableState<String>){
+fun TopBar(ticket: MutableState<String>, number: MutableState<String>, times: Array<Date?>){
     Row(
         horizontalArrangement = Arrangement.SpaceBetween,
         verticalAlignment = Alignment.CenterVertically,
@@ -85,7 +86,7 @@ fun TopBar(Ticket: MutableState<String>, Number: MutableState<String>){
                     ticketTypes.forEach { item ->
                         DropdownMenuItem(
                             text = { Text(item) },
-                            onClick = { Ticket.apply { this.value = item };expandedTicketMenu = false })
+                            onClick = { ticket.apply { this.value = item };times.apply { this.fill(null);this[0] = Calendar.getInstance().time};expandedTicketMenu = false })
                     }
                 }
             }
@@ -99,8 +100,8 @@ fun TopBar(Ticket: MutableState<String>, Number: MutableState<String>){
 
                 ){
                     BasicTextField(
-                        value = Number.value,
-                        onValueChange = {Number.value = it},
+                        value = number.value,
+                        onValueChange = {number.value = it},
                         keyboardActions = KeyboardActions(
                             onDone = {
                                 // Hide the keyboard when done
