@@ -76,7 +76,7 @@ fun Greeting(modifier: Modifier = Modifier) {
 
     Column(
         modifier = Modifier
-            .background(Color.DarkGray)
+            .background(MaterialTheme.colorScheme.tertiary)
             .fillMaxSize()
             .padding(top = 20.dp)
     ){
@@ -106,7 +106,7 @@ fun Greeting(modifier: Modifier = Modifier) {
             MessageBar(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .background(Color.DarkGray)
+                    .background(MaterialTheme.colorScheme.tertiary)
                     .align(Alignment.BottomStart)
                     .padding(start = 30.dp, end = 30.dp, top = 15.dp, bottom = 15.dp)
             )

@@ -3,6 +3,7 @@ package io.github.stcksmsh.beogradplusplus
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.MutableState
@@ -109,17 +110,19 @@ fun Message(time: Date, ticketTime: Date, ticket: MutableState<String>, phoneNum
         )
 
         Text(
-            text = ticket.value,
+//            text = ticket.value,
+            text = "1234567890",
             fontSize = 17.sp,
             textAlign = TextAlign.End,
-            color = Color.White,
+            color = MaterialTheme.colorScheme.primary,
             modifier = Modifier
                 .align(Alignment.End)
-                .fillMaxSize()
-                .padding(start = 250.dp)
+//                .fillMaxSize()
+                .padding(start = 60.dp)
                 .clip(RoundedCornerShape(10.dp))
-                .background(Color.Gray)
-                .padding(top = 15.dp, bottom = 15.dp, start = 0.dp, end = 15.dp)
+                .background(MaterialTheme.colorScheme.secondary)
+                .padding(top = 15.dp, bottom = 15.dp, start = 15.dp, end = 15.dp)
+                .widthIn(min = 0.dp)
         )
 
         Text(
@@ -145,13 +148,14 @@ fun Message(time: Date, ticketTime: Date, ticket: MutableState<String>, phoneNum
                 append(".\nPlacanjem operateru izmirujete dugovanja za ovu kartu prema JKP Naplata prevozne usluge Beograd.\nSacuvajte ovu poruku.")
             },
             fontSize = 17.sp,
-            color = Color.White,
+            color = MaterialTheme.colorScheme.primary,
             modifier = Modifier
-                .fillMaxSize()
+//                .fillMaxSize()
                 .padding(end = 60.dp)
                 .clip(RoundedCornerShape(10.dp))
-                .background(Color.Gray)
+                .background(MaterialTheme.colorScheme.secondary)
                 .padding(15.dp)
+                .widthIn(min = 0.dp)
         )
 
         Text(

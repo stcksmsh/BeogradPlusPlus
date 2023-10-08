@@ -8,6 +8,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.*
 import androidx.compose.material3.Icon
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -22,7 +23,7 @@ fun MessageBar(modifier: Modifier){
         horizontalArrangement = Arrangement.SpaceBetween,
         verticalAlignment = Alignment.CenterVertically,
         modifier = modifier
-            .background(Color.DarkGray)
+            .background(MaterialTheme.colorScheme.tertiary)
     ){
         Icon(Icons.Outlined.Add , contentDescription = "testing")
         Icon(Icons.Outlined.Menu , contentDescription = "testing")
@@ -30,10 +31,10 @@ fun MessageBar(modifier: Modifier){
             horizontalArrangement = Arrangement.spacedBy(5.dp),
             modifier = Modifier
                 .clip(RoundedCornerShape(20.dp))
-                .background(Color.Gray)
+                .background(MaterialTheme.colorScheme.secondary)
                 .padding(10.dp)
         ){
-            Text(text = "Text                           ", color = Color.DarkGray)
+            Text(text = "Text                           ", color = MaterialTheme.colorScheme.primary)
             Icon(Icons.Outlined.Send , contentDescription = "testing")
             Icon(Icons.Outlined.Face , contentDescription = "testing")
         }
