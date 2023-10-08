@@ -15,12 +15,12 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.unit.dp
 import java.util.*
 import kotlin.system.exitProcess
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun TopBar(ticket: MutableState<String>, number: MutableState<String>, times: Array<Date?>){
     Row(
@@ -72,7 +72,7 @@ fun TopBar(ticket: MutableState<String>, number: MutableState<String>, times: Ar
                             Text("Change number")
 
                         },
-                        onClick = {;expandedNumberMenu = true; expandedMainMenu = false}
+                        onClick = {;expandedNumberMenu = true;expandedMainMenu = false;}
                     )
                 }
 
@@ -102,15 +102,7 @@ fun TopBar(ticket: MutableState<String>, number: MutableState<String>, times: Ar
                     BasicTextField(
                         value = number.value,
                         onValueChange = {number.value = it},
-                        keyboardActions = KeyboardActions(
-                            onDone = {
-                                // Hide the keyboard when done
-                                expandedNumberMenu = false
-                            }
-                        ),
-                        keyboardOptions = KeyboardOptions.Default.copy(
-                            imeAction = ImeAction.Done
-                        ),
+                        textStyle = LocalTextStyle.current.merge(TextStyle(color = MaterialTheme.colorScheme.primary))
                     )
                 }
             }
