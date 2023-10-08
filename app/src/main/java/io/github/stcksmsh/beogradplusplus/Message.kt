@@ -110,14 +110,12 @@ fun Message(time: Date, ticketTime: Date, ticket: MutableState<String>, phoneNum
         )
 
         Text(
-//            text = ticket.value,
-            text = "1234567890",
+            text = ticket.value,
             fontSize = 17.sp,
             textAlign = TextAlign.End,
             color = MaterialTheme.colorScheme.primary,
             modifier = Modifier
                 .align(Alignment.End)
-//                .fillMaxSize()
                 .padding(start = 60.dp)
                 .clip(RoundedCornerShape(10.dp))
                 .background(MaterialTheme.colorScheme.secondary)
