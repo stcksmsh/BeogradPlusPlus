@@ -70,9 +70,9 @@ fun Greeting(modifier: Modifier = Modifier) {
     val phoneNumber = remember { mutableStateOf("381" + NumberGenerator().substring(1))}
     val numberOfMessages = 10
     var times: Array<Date?> = arrayOfNulls<Date>(numberOfMessages)
-    var ticket = remember { mutableStateOf("C90") }
+    var ticket = remember { mutableStateOf("A90") }
     var time = Calendar.getInstance().time
-    times[0] = time
+    times[0] = Date(time.time - ThreadLocalRandom.current().nextInt( 0, 15 * 60 * 1000).toLong())
 
     Column(
         modifier = Modifier
