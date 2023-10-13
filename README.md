@@ -15,17 +15,17 @@ BeogradPlusPlus je aplikacija koja je razvijena isključivo radi ukazivanja na n
 
 ### Instalacija
 
-1. Preuzmite BeogradPlusPlus sa [ove stranice](github.com/stcksmsh/BeogradPlusPlus).
-
+1. Preuzmite BeogradPlusPlus sa [ove stranice](https://github.com/stcksmsh/BeogradPlusPlus/releases/tag/v0.3)
 2. Instalirajte aplikaciju na svoj uređaj.
 
 ### Korišćenje
 
 1. Pokrenite BeogradPlusPlus.
 
-2. ~~Unesite svoj broj telefona u podesavanjima (opciono).~~
+2. Izaberite željeni tip karte i oblast (podrazumevana karta traje 90 minuta, i važi za zonu C).
 
-3. ~~Izaberite željeni tip karte i oblast (podrazumevana karta traje 90 minuta, i važi za zonu C).~~
+3. ~~Unesite svoj broj telefona u podesavanjima (opciono).~~
+
 
 # Molimo vas da imate na umu da je aplikacija razvijena isključivo radi demonstracije niske bezbjednosti novog sistema naplate u GSP-u i ne podržavamo njenu upotrebu za izbegavanje plaćanja karata.
 
