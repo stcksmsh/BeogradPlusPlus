@@ -1,0 +1,307 @@
+:root{
+    --color1: #FFCD1F;
+    --color2: #1FFF5D;
+    --color3: #1fb8ff;
+    --color4: #ff1fec;
+    --time: 15s;
+}
+
+*{
+    /* border: 1px solid red; */
+    font-family: monospace;
+    font-weight: 550;
+    box-sizing: border-box;
+}
+
+html{
+    min-height: 100%;
+}
+
+a{
+    color: white;
+    text-decoration-color: white;
+}
+
+body{
+    /*overflow: hidden;*/
+    background: linear-gradient(135deg, var(--color1), var(--color2), var(--color3), var(--color4));
+    background-size: 200% 200%;
+    animation: gradient var(--time) ease infinite;
+}
+
+p{
+    text-align: center;
+    font-size: 18px;
+    margin: 15px 0px;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+.root{
+    /* display: grid; */
+    margin: 25px 50px 0px 50px;
+    /* height: 800px; */
+    /* grid-template-columns: 1fr 1.5fr; */
+    color: 	#FAF9F6;
+    align-items: center;
+}
+
+
+/* **************************************************************************************************** */
+/* **************************************************************************************************** */
+/* **************************************************************************************************** */
+/* **************************************************************************************************** */
+/* **************************************************************************************************** */
+
+.section,.logo,.accordion .label, .visit-me {
+    cursor: pointer;
+    border-radius: 20px;
+    padding: 0px 20px;
+    background-color:rgb(30, 30, 30);
+    display: flex;
+    box-shadow: 0 0 15px 3px rgba(0, 0, 0, 0.7);
+}
+
+.section{
+    min-height: 50vh;
+    justify-content: center;
+}
+
+.logo{
+    flex-direction: column;
+    width: fit-content;
+    margin: 0 auto;
+    align-items: center;
+    padding: 0px 70px;
+    min-width: 500px;
+    margin-bottom: 60px;
+    border-radius: 0;
+    background-color: rgba(30, 30, 30, 0.15);
+    animation: logoA infinite ease 5s;
+    transition: all .3s;
+}
+@keyframes logoA {
+    0%{
+        transform: translateY(0px);
+    }
+    50%{
+        transform: translateY(15px);
+    }
+    100%{
+        transform: translateY(0px);
+    }
+    
+}
+.logo img{
+    width: 150px;
+}
+.logo h1{
+    margin-top: 0;
+    font-size: 25px;
+    font-style: italic;
+    text-align: center;
+}
+.wrapper{
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    gap: 80px;
+    grid-template-columns: 1fr 1.5fr;
+    color: 	#FAF9F6;
+    align-items: center;
+}
+
+.accordion .contentBx{
+    position: relative;
+    margin: 15px 0px;
+}
+.accordion .contentBx .label{
+    position: relative;
+    padding: 15px;
+    font-size: 18px;
+    z-index: 1;
+}
+.accordion .contentBx .label::before{
+    content: '+';
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    font-size: 1.5em;
+}
+.accordion .contentBx.active .label::before{
+    content: '-';
+}
+.accordion .contentBx .content{
+    position: relative;
+    background-color:rgb(60, 60, 60);
+    box-shadow: 0 5px 15px 1px rgba(0, 0, 0, 1);
+    height: 0;
+    overflow: hidden;
+    transition: 0.5s;
+    transform: translateY(-20px);
+    border-radius: 0px 0px 20px 20px;
+    opacity: 0;
+}
+.accordion .contentBx .content p{
+    font-size: 16px;
+    margin-top: 20px;
+}
+/***************************/
+.accordion .contentBx.active .content{
+    height: 150px;
+    padding: 10px;
+    opacity: 1; 
+    overflow-y: auto; /*ovo mozes da zakomentarises i odredis fiksnu velicinu za content*/
+    /*i da obrises sve ovo dolje za skrol,jer tad ti nebi trebalo */
+    /* align-items: center; */
+}
+.accordion .contentBx.active .content::-webkit-scrollbar-thumb {
+    background: rgb(30, 30, 30); 
+    border-radius: 10px; 
+}
+.accordion .contentBx.active .content::-webkit-scrollbar {
+    width: 5px;
+}
+.accordion .contentBx.active .content::-webkit-scrollbar-button {
+    display: none; 
+}
+.accordion .contentBx.active .content::-webkit-scrollbar-track {
+    background: rgb(60, 60, 60);
+}
+/***************************/
+.flex-column{
+    flex-direction: column;
+}
+.right,.left .accordion,.left .visit{
+    background-color: rgba(30, 30, 30, 0.1);
+    padding: 20px;
+    box-shadow: 0 0 15px 3px rgba(0, 0, 0, 0.7);
+    text-align: center;
+    /* animation: logoA infinite ease 5s; */
+}
+.right h1, .left h1{
+    font-size: 18px;
+}
+.right p,.left p{
+    font-size: 16px;
+}
+.right img{
+    width: 80px;
+    float: left;
+    margin: 10px;
+}
+.visit{
+    margin-top: 50px;
+    text-align: center;
+}
+.visit-me{
+    flex-direction: column;
+    padding-bottom: 30px;
+}
+.visit h1{
+    margin-bottom: 0;
+}
+.visit p{
+    font-style: italic;
+}
+.btn-box{
+    display: flex;
+    justify-content: center
+}
+.btn-box a{
+    position: relative;
+    background-color: #fff;
+    color: rgb(30, 30, 30);
+    margin-right: 20px;
+    display: block;
+    text-decoration: none;
+    padding: 15px 30px;
+    border: 2px solid #fff;
+    border-radius: 8px;
+    font-size: 18px;
+    letter-spacing: 1px;
+    font-weight: 600;
+    z-index: 1;
+    overflow: hidden;
+    transition: .4s;
+}
+.btn-box a:hover{
+    color: #fff;
+}
+.btn-box a:nth-child(2){
+    background-color: transparent;
+    color: #fff;
+}
+.btn-box a:nth-child(2)::before{
+    background-color: #fff;
+}
+.btn-box a:nth-child(2):hover{
+    color: rgb(30, 30, 30);
+}
+.btn-box a::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: rgb(30, 30, 30);
+    z-index: -1;
+    transition: .4s;
+}
+.btn-box a:hover::before{
+    width: 100%;
+}
+@media screen and (max-width: 1200px) {
+    .root{
+        display:flex;
+        flex-direction: column;
+        margin: 25px 0px;
+        padding: 0 100px;
+    }
+    .wrapper{
+        display: flex;
+        gap: 0;
+        flex-direction: column-reverse;
+    }
+    .logo{
+        margin-bottom: 40px;
+    }
+    .visit,.accordion {
+        margin-top: 40px;
+    }
+}
+@media screen and (max-width: 800px){
+    .root{
+        padding: 0 20px;
+    }
+    .wrapper{
+        width: 100%;
+    }
+    .logo{
+        min-width: 100%;
+        padding: 0;
+    }
+    .logo img{
+        width: 100px;
+    }
+    .right img {
+        width: 50px;
+    }
+}
+@media screen and (max-width: 500px){
+    .right,.left{
+        width: 100%;
+    }
+}
