@@ -1,22 +1,20 @@
 package io.github.stcksmsh.beogradplusplus
 
+import java.io.File
+import java.io.FileInputStream
+import java.io.InputStream
 import java.util.Date
+import kotlin.math.pow
 
-/*  Ticket ID is 10 digit number
-*   probably counts the number of tickets printed EVER
-*   on the 17.05.2023 @ 08:00:19 AM the ID was 1203
-*   on the 29.08.2023 @ 06:39:37 AM the ID was 0003709567
-*   Until I come up with a better solution I will be generating IDs as follows
-*   The two dates mentioned above have 104 days between them, and the ID rose by 3705364
-*   that is ~35657 per day, ~1486 per hour and ~25 per minute, or roughly one each 2.4 seconds
-*   So I will take the current time in millis, subtract the time of 29.08.2023...
-*   and then divide by 2400 to get the number by which to increase 3709567
-*/
-val referenceMillis = 1693283977000
-val referenceID = 3709567
-val milisPerTicket = 2400
+var coefficients = listOf<Double>(2.295252595021218e-08,-77.11293279210257,64768061058.55325)
 
 fun IDGenerator(currentDate: Date): String{
-    val id = referenceID + (currentDate.time - referenceMillis) / milisPerTicket
+    val milis: Double = currentDate.time.toDouble() / 1000
+    var calculatedID: Double = 0.0
+    val size = coefficients.size
+    for(i in 0..size-1){
+        calculatedID += coefficients.get(size - 1 - i) * milis.pow(i)
+    }
+    val id: Long = calculatedID.toLong()
     return "${id}".padStart(10, '0')
 }
