@@ -1,4 +1,5 @@
-[![Github All Releases](https://img.shields.io/github/downloads/stcksmsh/BeogradPlusPlus/total.svg?style=for-the-badge)](https://github.com/stcksmsh/BeogradPlusPlus/releases)     [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)     [![Linkedin](https://img.shields.io/badge/Linkedin-Kosta_Vukicevic-blue.svg?style=for-the-badge)](https://www.linkedin.com/in/kostavukicevic)
+<!--[![Github All Releases](https://img.shields.io/github/downloads/stcksmsh/BeogradPlusPlus/total.svg?style=for-the-badge)](https://github.com/stcksmsh/BeogradPlusPlus/releases)-->
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)     [![Linkedin](https://img.shields.io/badge/Linkedin-Kosta_Vukicevic-blue.svg?style=for-the-badge)](https://www.linkedin.com/in/kostavukicevic)
 
 # BeogradPlusPlus
 
