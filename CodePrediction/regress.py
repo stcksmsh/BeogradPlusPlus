@@ -32,6 +32,9 @@ def calculateTime(ticketType: int, year: int, month: int, day: int,\
     dt -= lengths[ticketType]
     return milisSinceEpoch(dt)
 
+# sort data.csv and remove duplicates
+os.system("sort -o data.csv data.csv")
+
 x = []
 y = []
 
@@ -44,6 +47,7 @@ with open('data.csv', 'r') as ifile:
         y.append(code)
 
 deg = 2
+
 
 model = np.poly1d(np.polyfit(x, y, deg))
 # print(np.polyfit(x, y, deg))
@@ -59,3 +63,5 @@ model = np.poly1d(np.polyfit(x, y, deg))
 command = r"sed -i 's/^\(var coefficients[^\\\(\\n]*\).*$/\1\(" + ','.join([str(f) for f in model.coefficients]) + r"\)/' ../app/src/main/java/io/github/stcksmsh/beogradplusplus/IDGenerator.kt"
 # print(command)
 os.system(command)
+
+print(r2_score(y, model(x)))
