@@ -3,21 +3,7 @@
   <component name="CsvFileAttributes">
     <option name="attributeMap">
       <map>
-        <entry key="/app/src/main/java/CodePrediction/coefficients.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="/app/src/main/java/CodePrediction/data.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="/app/src/main/java/io/github/stcksmsh/beogradplusplus/data.csv">
+        <entry key="/CodePrediction/data.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />

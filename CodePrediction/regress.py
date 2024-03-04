@@ -46,7 +46,7 @@ with open('data.csv', 'r') as ifile:
         x.append(calculateTime(ticketType, year, month, day, hour, minute, second))
         y.append(code)
 
-deg = 2
+deg = 3
 
 
 model = np.poly1d(np.polyfit(x, y, deg))

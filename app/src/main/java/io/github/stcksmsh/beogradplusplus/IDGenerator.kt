@@ -6,7 +6,7 @@ import java.io.InputStream
 import java.util.Date
 import kotlin.math.pow
 
-var coefficients = listOf<Double>(2.4040094928514118e-08,-80.78347097622161,67865058262.24986)
+var coefficients = listOf<Double>(-1.7690405896555458e-15,9.009747686311049e-06,-15294.726691421269,8654170273309.756)
 
 fun IDGenerator(currentDate: Date): String{
     val milis: Double = currentDate.time.toDouble() / 1000
