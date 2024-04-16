@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <bool name="abc_action_bar_embed_tabs">true</bool>
+    <bool name="abc_config_actionMenuItemAllCaps">true</bool>
+    <bool name="mtrl_btn_textappearance_all_caps">true</bool>
+    <bool name="show_finance">false</bool>
+    <bool name="show_garage_number_in_arrivals">false</bool>
+    <bool name="show_main_line_title_in_arrivals">true</bool>
+    <bool name="show_poi_on_map">false</bool>
+    <bool name="show_vehicles_on_map">true</bool>
+</resources>

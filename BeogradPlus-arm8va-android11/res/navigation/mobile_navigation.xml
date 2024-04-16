@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation android:id="@id/mobile_navigation" app:startDestination="@id/navigation_stations"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <fragment android:label="@string/title_stations" android:name="app.ui.transport.stations.StationsFragment" android:id="@id/navigation_stations">
+        <action android:id="@id/action_navigation_stations_to_searchStationFragmentTabs" app:destination="@id/searchStationFragmentTabs" app:enterAnim="@anim/nav_default_enter_anim" app:exitAnim="@anim/nav_default_exit_anim" app:popEnterAnim="@anim/nav_default_pop_enter_anim" app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <action android:id="@id/action_navigation_stations_to_arrivalsFragment" app:destination="@id/arrivalsFragment" app:enterAnim="@anim/nav_default_enter_anim" app:exitAnim="@anim/nav_default_exit_anim" app:popEnterAnim="@anim/nav_default_pop_enter_anim" app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <action android:id="@id/action_navigation_stations_to_qrStationSearchFragment" app:destination="@id/qrStationSearchFragment" />
+    </fragment>
+    <fragment android:label="@string/about_application" android:name="buslogic.app.ui.settings.AboutAppFragment" android:id="@id/fragment_about" />
+    <fragment android:label="@string/links" android:name="buslogic.app.ui.settings.LinksFragment" android:id="@id/fragment_links" />
+    <fragment android:label="@string/title_account" android:name="buslogic.app.ui.account.AccountFragment" android:id="@id/navigation_account" />
+    <fragment android:label="@string/title_nicard" android:name="buslogic.app.ui.account.NiCardFragment" android:id="@id/navigation_nicard">
+        <action android:id="@id/action_navigation_nicard_to_niCardFragmentSlide" app:destination="@id/niCardFragmentSlide" app:enterAnim="@anim/nav_default_enter_anim" app:exitAnim="@anim/nav_default_exit_anim" app:popEnterAnim="@anim/nav_default_pop_enter_anim" app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
+    <fragment android:label="@string/title_settings" android:name="buslogic.app.ui.settings.SettingsFragment" android:id="@id/navigation_settings">
+        <action android:id="@id/action_navigation_settings_to_fragment_about" app:destination="@id/fragment_about" app:enterAnim="@anim/nav_default_enter_anim" app:exitAnim="@anim/nav_default_exit_anim" app:popEnterAnim="@anim/nav_default_pop_enter_anim" app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <action android:id="@id/action_navigation_settings_to_fragment_links" app:destination="@id/fragment_links" app:enterAnim="@anim/nav_default_enter_anim" app:exitAnim="@anim/nav_default_exit_anim" app:popEnterAnim="@anim/nav_default_pop_enter_anim" app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
+    <fragment android:label="fragment_search_station_tabs" android:name="buslogic.app.ui.transport.search_stations.SearchStationFragmentTabs" android:id="@id/searchStationFragmentTabs">
+        <action android:id="@id/action_searchStationFragmentTabs_to_arrivalsFragment" app:destination="@id/arrivalsFragment" />
+    </fragment>
+    <fragment android:label="ArrivalsFragment" android:name="app.ui.transport.arrivals.ArrivalsFragment" android:id="@id/arrivalsFragment" />
+    <fragment android:label="QrStationSearchFragment" android:name="buslogic.app.ui.transport.search_stations.QrStationSearchFragment" android:id="@id/qrStationSearchFragment">
+        <action android:id="@id/action_qrStationSearchFragment_to_arrivalsFragment" app:destination="@id/arrivalsFragment" />
+    </fragment>
+    <fragment android:label="fragment_nicard_slide" android:name="app.ui.account.NiCardFragmentSlide" android:id="@id/niCardFragmentSlide">
+        <action android:id="@id/action_niCardFragmentSlide_to_allCardTypesFragment" app:destination="@id/allCardTypesFragment" app:enterAnim="@anim/nav_default_enter_anim" app:exitAnim="@anim/nav_default_exit_anim" app:popEnterAnim="@anim/nav_default_pop_enter_anim" app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <action android:id="@id/action_niCardFragmentSlide_to_niCardDetailsFragment" app:destination="@id/niCardDetailsFragment" app:enterAnim="@anim/nav_default_enter_anim" app:exitAnim="@anim/nav_default_exit_anim" app:popEnterAnim="@anim/nav_default_pop_enter_anim" app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <action android:id="@id/action_niCardFragmentSlide_to_navigation_nicard" app:destination="@id/navigation_nicard" app:enterAnim="@anim/nav_default_enter_anim" app:exitAnim="@anim/nav_default_exit_anim" app:popEnterAnim="@anim/nav_default_pop_enter_anim" app:popExitAnim="@anim/nav_default_pop_exit_anim" app:popUpToInclusive="true" />
+    </fragment>
+    <fragment android:label="fragment_nicard_all_card_types" android:name="buslogic.app.ui.account.AllCardTypesFragment" android:id="@id/allCardTypesFragment">
+        <action android:id="@id/action_allCardTypesFragment_to_niCardDetailsFragment" app:destination="@id/niCardDetailsFragment" app:enterAnim="@anim/nav_default_enter_anim" app:exitAnim="@anim/nav_default_exit_anim" app:popEnterAnim="@anim/nav_default_pop_enter_anim" />
+    </fragment>
+    <fragment android:label="fragment_nicard_details" android:name="app.ui.account.NiCardDetailsFragment" android:id="@id/niCardDetailsFragment" />
+</navigation>

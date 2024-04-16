@@ -1,0 +1,45 @@
+.class Lcom/google/android/material/card/b;
+.super Landroid/graphics/drawable/InsetDrawable;
+.source "MaterialCardViewHelper.java"
+
+
+# direct methods
+.method public constructor <init>()V
+    .locals 0
+
+    const/4 p0, 0x0
+
+    throw p0
+.end method
+
+
+# virtual methods
+.method public final getMinimumHeight()I
+    .locals 1
+
+    .line 1
+    const/4 v0, -0x1
+
+    .line 2
+    return v0
+.end method
+
+.method public final getMinimumWidth()I
+    .locals 1
+
+    .line 1
+    const/4 v0, -0x1
+
+    .line 2
+    return v0
+.end method
+
+.method public final getPadding(Landroid/graphics/Rect;)Z
+    .locals 0
+
+    .line 1
+    const/4 p1, 0x0
+
+    .line 2
+    return p1
+.end method

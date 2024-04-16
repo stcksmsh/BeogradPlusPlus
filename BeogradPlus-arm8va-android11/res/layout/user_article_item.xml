@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/item_view" android:layout_width="fill_parent" android:layout_height="wrap_content" android:weightSum="3.0"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="vertical" android:background="@drawable/user_article_item_bg" android:paddingLeft="10.0dip" android:paddingTop="10.0dip" android:paddingRight="10.0dip" android:paddingBottom="10.0dip" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_margin="5.0dip" android:layout_weight="2.5" android:elevation="5.0dip" android:paddingHorizontal="10.0dip" android:paddingVertical="10.0dip">
+        <TextView android:textSize="12.0dip" android:textStyle="bold" android:textColor="@color/black_color" android:id="@id/article_tv" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Artikal" />
+        <TextView android:textSize="12.0dip" android:id="@id/ticket_id_tv" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="ID karte" />
+        <androidx.constraintlayout.widget.ConstraintLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <TextView android:textSize="12.0dip" android:id="@id/date" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/valid_from" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" />
+            <TextView android:textSize="12.0dip" android:id="@id/date_tv" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Datum" android:layout_marginStart="10.0dip" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toEndOf="@id/date" app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <TextView android:textSize="12.0dip" android:id="@id/expire_date" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/valid_until" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" />
+            <TextView android:textSize="12.0dip" android:id="@id/duration_time_tv" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Trajanje" android:layout_marginStart="10.0dip" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toEndOf="@id/expire_date" app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:background="@drawable/user_article_item_bg" android:paddingLeft="5.0dip" android:paddingRight="5.0dip" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_marginTop="5.0dip" android:layout_marginBottom="5.0dip" android:layout_weight="0.5" android:layout_marginEnd="5.0dip" android:elevation="5.0dip" android:layout_marginVertical="5.0dip" android:paddingHorizontal="5.0dip">
+        <ImageView android:id="@id/qr_code_img" android:layout_width="fill_parent" android:layout_height="fill_parent" android:src="@drawable/qr_scan_btn_new" />
+    </LinearLayout>
+</LinearLayout>

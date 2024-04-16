@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:paddingLeft="10.0dip" android:paddingRight="10.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:paddingHorizontal="10.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:background="@drawable/white_rounded_bg" android:paddingLeft="30.0dip" android:paddingTop="30.0dip" android:paddingRight="30.0dip" android:paddingBottom="30.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="10.0dip" android:paddingHorizontal="30.0dip" android:paddingVertical="30.0dip">
+        <ImageView android:id="@id/qr_code_img" android:layout_width="fill_parent" android:layout_height="wrap_content" android:src="@drawable/qr_scan_btn_new" />
+        <TextView android:textSize="18.0sp" android:textStyle="bold" android:textColor="@color/black_color" android:gravity="center" android:id="@id/qr_code_text" android:padding="8.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+    </LinearLayout>
+    <android.widget.Button android:textSize="18.0dip" android:textColor="@color/white_color_only" android:id="@id/finish_btn" android:background="@drawable/button_with_feedback" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="OK" />
+</LinearLayout>

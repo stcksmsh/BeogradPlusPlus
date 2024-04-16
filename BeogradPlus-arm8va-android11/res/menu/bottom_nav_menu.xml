@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:icon="@drawable/pretraga" android:id="@id/navigation_stations" android:title="@string/title_stations" />
+    <item android:icon="@drawable/my_account" android:id="@id/navigation_account" android:title="@string/title_my_account" />
+    <item android:id="@id/last_user_article" android:title="" />
+    <item android:icon="@drawable/monthly_card_icon_tab" android:id="@id/navigation_nicard" android:title="@string/title_nicard" />
+    <item android:icon="@drawable/outline_settings_24" android:id="@id/navigation_settings" android:title="@string/title_settings" />
+</menu>

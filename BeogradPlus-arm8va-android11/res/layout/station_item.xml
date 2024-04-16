@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="?android:selectableItemBackground" android:focusable="true" android:clickable="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:weightSum="1.0"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="horizontal" android:paddingTop="5.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent" android:weightSum="1.0" android:layout_weight="0.9">
+        <LinearLayout android:orientation="vertical" android:layout_width="0.0dip" android:layout_height="fill_parent" android:weightSum="1.0" android:layout_weight="0.2">
+            <ImageView android:gravity="center" android:id="@id/imageView2" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="0.6" app:srcCompat="@drawable/bus_stajaliste_vece" />
+            <TextView android:textColor="@color/main_text_color" android:gravity="center" android:id="@id/distance" android:layout_width="fill_parent" android:layout_height="0.0dip" android:text="HomeTown" android:layout_weight="0.4" />
+        </LinearLayout>
+        <LinearLayout android:orientation="vertical" android:layout_width="0.0dip" android:layout_height="fill_parent" android:weightSum="1.0" android:layout_weight="0.8">
+            <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="0.0dip" android:weightSum="1.0" android:layout_weight="0.5">
+                <TextView android:textColor="@color/main_text_color" android:gravity="center_vertical" android:id="@id/station_name" android:layout_width="0.0dip" android:layout_height="fill_parent" android:text="Name" android:singleLine="true" android:layout_weight="0.9" />
+                <ImageView android:id="@id/not_favourite_station" android:layout_width="0.0dip" android:layout_height="fill_parent" android:src="@drawable/ic_baseline_star_border_24" android:layout_weight="0.1" android:scaleX="0.8" android:scaleY="0.8" />
+                <ImageView android:id="@id/favourite_station" android:visibility="gone" android:layout_width="0.0dip" android:layout_height="fill_parent" android:src="@drawable/ic_baseline_star_24" android:layout_weight="0.1" android:scaleX="0.8" android:scaleY="0.8" />
+            </LinearLayout>
+            <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/lines" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="0.5" />
+        </LinearLayout>
+    </LinearLayout>
+    <View android:background="@color/lines_in_list" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_weight="0.1" />
+</LinearLayout>

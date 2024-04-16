@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:weightSum="4.0"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="14.0sp" android:gravity="center" android:id="@id/card_type" android:background="@drawable/table_content_cell_bg" android:visibility="gone" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0" style="@style/SimpleBreakStrategy" />
+    <ImageView android:gravity="center" android:id="@id/card_type_image" android:background="@drawable/table_content_cell_bg" android:visibility="gone" android:layout_width="0.0dip" android:layout_height="60.0dip" android:src="@drawable/ic_visa" android:scaleType="fitXY" android:layout_weight="1.0" android:layout_centerVertical="true" />
+    <TextView android:textSize="14.0sp" android:gravity="center" android:id="@id/last_four_digits" android:background="@drawable/table_content_cell_bg" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0" style="@style/SimpleBreakStrategy" />
+    <TextView android:textSize="14.0sp" android:gravity="center" android:id="@id/amount" android:background="@drawable/table_content_cell_bg" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0" style="@style/SimpleBreakStrategy" />
+    <TextView android:textSize="14.0sp" android:gravity="center" android:id="@id/status" android:background="@drawable/table_content_cell_bg" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0" style="@style/SimpleBreakStrategy" />
+</LinearLayout>

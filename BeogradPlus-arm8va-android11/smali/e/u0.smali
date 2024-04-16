@@ -1,0 +1,39 @@
+.class public interface abstract annotation Le/u0;
+.super Ljava/lang/Object;
+.source "Px.kt"
+
+# interfaces
+.implements Ljava/lang/annotation/Annotation;
+
+
+# annotations
+.annotation build Le/r;
+.end annotation
+
+.annotation runtime Ljava/lang/annotation/Documented;
+.end annotation
+
+.annotation runtime Ljava/lang/annotation/Retention;
+    value = .enum Ljava/lang/annotation/RetentionPolicy;->CLASS:Ljava/lang/annotation/RetentionPolicy;
+.end annotation
+
+.annotation runtime Ljava/lang/annotation/Target;
+    value = {
+        .enum Ljava/lang/annotation/ElementType;->FIELD:Ljava/lang/annotation/ElementType;,
+        .enum Ljava/lang/annotation/ElementType;->METHOD:Ljava/lang/annotation/ElementType;,
+        .enum Ljava/lang/annotation/ElementType;->PARAMETER:Ljava/lang/annotation/ElementType;,
+        .enum Ljava/lang/annotation/ElementType;->LOCAL_VARIABLE:Ljava/lang/annotation/ElementType;
+    }
+.end annotation
+
+.annotation runtime Lkotlin/h0;
+.end annotation
+
+.annotation runtime Lqa/c;
+.end annotation
+
+.annotation runtime Lqa/e;
+.end annotation
+
+.annotation runtime Lqa/f;
+.end annotation

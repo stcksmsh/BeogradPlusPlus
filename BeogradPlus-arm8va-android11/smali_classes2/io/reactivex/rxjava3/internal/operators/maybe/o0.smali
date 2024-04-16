@@ -1,0 +1,96 @@
+.class public final Lio/reactivex/rxjava3/internal/operators/maybe/o0;
+.super Lio/reactivex/rxjava3/core/s;
+.source "MaybeFromSingle.java"
+
+# interfaces
+.implements Lga/j;
+
+
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lio/reactivex/rxjava3/internal/operators/maybe/o0$a;
+    }
+.end annotation
+
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "<T:",
+        "Ljava/lang/Object;",
+        ">",
+        "Lio/reactivex/rxjava3/core/s<",
+        "TT;>;",
+        "Lga/j<",
+        "TT;>;"
+    }
+.end annotation
+
+
+# instance fields
+.field public final a:Lio/reactivex/rxjava3/core/q0;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lio/reactivex/rxjava3/core/q0<",
+            "TT;>;"
+        }
+    .end annotation
+.end field
+
+
+# direct methods
+.method public constructor <init>(Lio/reactivex/rxjava3/core/q0;)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lio/reactivex/rxjava3/core/q0<",
+            "TT;>;)V"
+        }
+    .end annotation
+
+    .line 1
+    invoke-direct {p0}, Lio/reactivex/rxjava3/core/s;-><init>()V
+
+    .line 2
+    .line 3
+    .line 4
+    iput-object p1, p0, Lio/reactivex/rxjava3/internal/operators/maybe/o0;->a:Lio/reactivex/rxjava3/core/q0;
+
+    .line 5
+    .line 6
+    return-void
+.end method
+
+
+# virtual methods
+.method public final j0(Lio/reactivex/rxjava3/core/v;)V
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lio/reactivex/rxjava3/core/v<",
+            "-TT;>;)V"
+        }
+    .end annotation
+
+    .line 1
+    new-instance v0, Lio/reactivex/rxjava3/internal/operators/maybe/o0$a;
+
+    .line 2
+    .line 3
+    invoke-direct {v0, p1}, Lio/reactivex/rxjava3/internal/operators/maybe/o0$a;-><init>(Lio/reactivex/rxjava3/core/v;)V
+
+    .line 4
+    .line 5
+    .line 6
+    iget-object p1, p0, Lio/reactivex/rxjava3/internal/operators/maybe/o0;->a:Lio/reactivex/rxjava3/core/q0;
+
+    .line 7
+    .line 8
+    invoke-interface {p1, v0}, Lio/reactivex/rxjava3/core/q0;->a(Lio/reactivex/rxjava3/core/n0;)V
+
+    .line 9
+    .line 10
+    .line 11
+    return-void
+.end method

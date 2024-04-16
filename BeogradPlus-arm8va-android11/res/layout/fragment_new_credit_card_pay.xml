@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <TextView android:textSize="18.0dip" android:id="@id/finance_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:text="@string/card_information" android:layout_alignParentTop="true" android:layout_centerHorizontal="true" android:layout_centerVertical="true" android:textAllCaps="true" android:paddingStart="10.0dip" android:paddingEnd="10.0dip" />
+    <View android:id="@id/first_row_line" android:background="@color/colorPrimary" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_marginTop="10.0dip" android:layout_marginBottom="10.0dip" android:layout_below="@id/finance_title" />
+    <ScrollView android:id="@id/scroll_view" android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_above="@id/paying_with_mastercard_bonus_text" android:layout_below="@id/first_row_line">
+        <androidx.constraintlayout.widget.ConstraintLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <com.braintreepayments.cardform.view.CardForm android:id="@id/card_form" android:layout_width="0.0dip" android:layout_height="wrap_content" android:paddingStart="16.0dip" android:paddingEnd="16.0dip" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" />
+            <CheckBox android:textSize="16.0dip" android:textColor="@color/black_color" android:id="@id/remember_credit_card_checkbox" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="20.0dip" android:checked="true" android:text="@string/remember_card" android:layout_centerHorizontal="true" android:buttonTint="@color/sign_up_button_background_color" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@id/card_form" />
+            <Button android:textSize="14.0dip" android:textColor="@color/white_color_only" android:id="@id/continue_to_buy" android:background="@drawable/button_with_feedback" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="20.0dip" android:scaleType="fitXY" android:text="@string/continue_buying" android:paddingStart="20.0dip" android:paddingEnd="20.0dip" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@id/remember_credit_card_checkbox" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+    <TextView android:textSize="17.0dip" android:textColor="@color/red_color" android:gravity="center" android:id="@id/paying_with_mastercard_bonus_text" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:layout_marginBottom="10.0dip" android:text="@string/paying_with_mastercard_bonus_text" android:layout_above="@id/cards_layout_new" android:layout_centerHorizontal="true" android:layout_alignWithParentIfMissing="true" android:paddingStart="20.0dip" android:paddingEnd="20.0dip" />
+    <LinearLayout android:orientation="vertical" android:id="@id/cards_layout_new" android:paddingTop="8.0dip" android:paddingBottom="8.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="30.0dip" android:layout_alignParentBottom="true" android:paddingVertical="8.0dip">
+        <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:paddingLeft="30.0dip" android:paddingRight="30.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:weightSum="4.0" android:paddingHorizontal="30.0dip">
+            <ImageView android:layout_width="0.0dip" android:layout_height="40.0dip" android:src="@drawable/maestro_card_new" android:layout_weight="1.0" />
+            <ImageView android:layout_width="0.0dip" android:layout_height="40.0dip" android:src="@drawable/master_card_new" android:layout_weight="1.0" />
+            <ImageView android:layout_width="0.0dip" android:layout_height="25.0dip" android:src="@drawable/dina_card_new" android:layout_weight="1.0" />
+            <ImageView android:layout_width="0.0dip" android:layout_height="25.0dip" android:src="@drawable/visa_card_new" android:layout_weight="1.0" />
+        </LinearLayout>
+        <ImageView android:id="@id/banca_intesa" android:paddingLeft="50.0dip" android:paddingRight="50.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:src="@drawable/ic_otp_bank_logo" android:paddingHorizontal="50.0dip" />
+        <LinearLayout android:gravity="center" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:weightSum="3.5">
+            <ImageView android:id="@id/master_card_secure" android:layout_width="0.0dip" android:layout_height="40.0dip" android:src="@drawable/master_id_check_new" android:layout_weight="1.0" />
+            <ImageView android:id="@id/verified_vise" android:layout_width="0.0dip" android:layout_height="40.0dip" android:src="@drawable/visa_secure_new" android:layout_weight="1.0" />
+            <ImageView android:id="@id/all_secure" android:layout_width="0.0dip" android:layout_height="40.0dip" android:src="@drawable/ic_allsecure" android:layout_weight="1.0" />
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:paddingBottom="80.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="14.0dip" android:id="@id/finance_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/view_transaction_history" android:layout_alignParentTop="true" android:layout_centerHorizontal="true" android:textAllCaps="true" android:paddingStart="10.0dip" android:paddingEnd="10.0dip" />
+    <View android:id="@id/first_row_line" android:background="@color/primary" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_marginTop="5.0dip" android:layout_below="@id/finance_title" />
+    <ScrollView android:fadingEdgeLength="20.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/first_row_line" android:overScrollMode="never" android:requiresFadingEdge="vertical">
+        <RelativeLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/first_row_line">
+            <LinearLayout android:orientation="horizontal" android:id="@id/article_transactions" android:background="@drawable/pozadina_history" android:paddingTop="20.0dip" android:paddingBottom="20.0dip" android:layout_width="fill_parent" android:layout_height="130.0dip" android:layout_marginTop="15.0dip" android:layout_marginBottom="20.0dip" android:layout_marginStart="20.0dip" android:layout_marginEnd="20.0dip">
+                <LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="0.5" android:paddingStart="20.0dip">
+                    <TextView android:textSize="14.0dip" android:textStyle="bold" android:textColor="@color/white_color_only" android:id="@id/article_transactions_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/article_transactions" />
+                </LinearLayout>
+                <LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="0.5">
+                    <android.widget.Button android:id="@id/article_transactions_btn" android:background="@mipmap/history_button" android:layout_width="70.0dip" android:layout_height="70.0dip" />
+                    <TextView android:textSize="14.0dip" android:textStyle="bold" android:textColor="@color/white_color_only" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/just_view" />
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout android:orientation="horizontal" android:id="@id/monthly_cards_transactions" android:background="@drawable/finance_container" android:paddingTop="20.0dip" android:paddingBottom="20.0dip" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="20.0dip" android:layout_below="@id/article_transactions" android:layout_marginStart="20.0dip" android:layout_marginEnd="20.0dip">
+                <LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="0.5" android:paddingStart="20.0dip">
+                    <TextView android:textSize="14.0dip" android:textStyle="bold" android:textColor="@color/white_color" android:id="@id/monthly_cards_transactions_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/monthly_cards_transactions" />
+                </LinearLayout>
+                <LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="0.5">
+                    <android.widget.Button android:id="@id/monthly_cards_transactions_btn" android:background="@drawable/look_history_transaction_btn" android:layout_width="70.0dip" android:layout_height="70.0dip" />
+                    <TextView android:textSize="14.0dip" android:textStyle="bold" android:textColor="@color/white_color" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/just_view" />
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout android:orientation="horizontal" android:id="@id/add_funds_container" android:background="@drawable/pozadina_history" android:paddingTop="20.0dip" android:paddingBottom="20.0dip" android:layout_width="fill_parent" android:layout_height="130.0dip" android:layout_marginBottom="20.0dip" android:layout_below="@id/monthly_cards_transactions" android:layout_marginStart="20.0dip" android:layout_marginEnd="20.0dip">
+                <LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="0.5" android:paddingStart="20.0dip">
+                    <TextView android:textSize="14.0dip" android:textStyle="bold" android:textColor="@color/white_color_only" android:id="@id/balance_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/account_payment_transactions" />
+                </LinearLayout>
+                <LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="0.5">
+                    <android.widget.Button android:id="@id/credit_card_transaction_btn" android:background="@mipmap/history_button" android:layout_width="70.0dip" android:layout_height="70.0dip" />
+                    <TextView android:textSize="14.0dip" android:textStyle="bold" android:textColor="@color/white_color_only" android:id="@id/add_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/just_view" />
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout android:orientation="horizontal" android:id="@id/quick_pay_container" android:background="@drawable/finance_container" android:paddingTop="20.0dip" android:paddingBottom="20.0dip" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="20.0dip" android:layout_below="@id/add_funds_container" android:layout_marginStart="20.0dip" android:layout_marginEnd="20.0dip">
+                <LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="0.5" android:paddingStart="20.0dip">
+                    <TextView android:textSize="14.0dip" android:textStyle="bold" android:textColor="@color/white_color" android:id="@id/quick_pay_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/purchase_transactions" />
+                </LinearLayout>
+                <LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="0.5">
+                    <android.widget.Button android:id="@id/purchase_transaction_btn" android:background="@drawable/look_history_transaction_btn" android:layout_width="70.0dip" android:layout_height="70.0dip" />
+                    <TextView android:textSize="14.0dip" android:textStyle="bold" android:textColor="@color/white_color" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/just_view" />
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout android:orientation="horizontal" android:id="@id/all_transactions_container" android:background="@drawable/finance_container" android:paddingTop="20.0dip" android:paddingBottom="20.0dip" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="100.0dip" android:layout_below="@id/quick_pay_container" android:layout_marginStart="20.0dip" android:layout_marginEnd="20.0dip">
+                <LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="0.5" android:paddingStart="20.0dip">
+                    <TextView android:textSize="14.0dip" android:textStyle="bold" android:textColor="@color/white_color" android:id="@id/all_transactions_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/all_transactions" />
+                </LinearLayout>
+                <LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="0.5">
+                    <android.widget.Button android:id="@id/all_transactions_btn" android:background="@drawable/look_history_transaction_btn" android:layout_width="70.0dip" android:layout_height="70.0dip" />
+                    <TextView android:textSize="14.0dip" android:textStyle="bold" android:textColor="@color/white_color" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/just_view" />
+                </LinearLayout>
+            </LinearLayout>
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>

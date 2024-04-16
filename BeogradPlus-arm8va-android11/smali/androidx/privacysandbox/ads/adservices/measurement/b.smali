@@ -1,0 +1,263 @@
+.class public abstract Landroidx/privacysandbox/ads/adservices/measurement/b;
+.super Ljava/lang/Object;
+.source "MeasurementManager.kt"
+
+
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Landroidx/privacysandbox/ads/adservices/measurement/b$a;,
+        Landroidx/privacysandbox/ads/adservices/measurement/b$b;
+    }
+.end annotation
+
+.annotation runtime Lkotlin/h0;
+.end annotation
+
+
+# static fields
+.field public static final a:Landroidx/privacysandbox/ads/adservices/measurement/b$b;
+    .annotation build Lgg/l;
+    .end annotation
+.end field
+
+.field public static final b:I = 0x0
+
+.field public static final c:I = 0x1
+
+
+# direct methods
+.method public static constructor <clinit>()V
+    .locals 1
+
+    .line 1
+    new-instance v0, Landroidx/privacysandbox/ads/adservices/measurement/b$b;
+
+    .line 2
+    .line 3
+    invoke-direct {v0}, Landroidx/privacysandbox/ads/adservices/measurement/b$b;-><init>()V
+
+    .line 4
+    .line 5
+    .line 6
+    sput-object v0, Landroidx/privacysandbox/ads/adservices/measurement/b;->a:Landroidx/privacysandbox/ads/adservices/measurement/b$b;
+
+    .line 7
+    .line 8
+    return-void
+.end method
+
+.method public constructor <init>()V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+.method public static final c(Landroid/content/Context;)Landroidx/privacysandbox/ads/adservices/measurement/b;
+    .locals 1
+    .param p0    # Landroid/content/Context;
+        .annotation build Lgg/l;
+        .end annotation
+    .end param
+    .annotation build Landroid/annotation/SuppressLint;
+        value = {
+            "NewApi",
+            "ClassVerificationFailure"
+        }
+    .end annotation
+
+    .annotation build Lgg/m;
+    .end annotation
+
+    .annotation runtime Lya/m;
+    .end annotation
+
+    .line 1
+    sget-object v0, Landroidx/privacysandbox/ads/adservices/measurement/b;->a:Landroidx/privacysandbox/ads/adservices/measurement/b$b;
+
+    .line 2
+    .line 3
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 4
+    .line 5
+    .line 6
+    invoke-static {p0}, Landroidx/privacysandbox/ads/adservices/measurement/b$b;->a(Landroid/content/Context;)Landroidx/privacysandbox/ads/adservices/measurement/b;
+
+    .line 7
+    .line 8
+    .line 9
+    move-result-object p0
+
+    .line 10
+    return-object p0
+.end method
+
+
+# virtual methods
+.method public abstract a(Landroidx/privacysandbox/ads/adservices/measurement/a;Lkotlin/coroutines/d;)Ljava/lang/Object;
+    .param p1    # Landroidx/privacysandbox/ads/adservices/measurement/a;
+        .annotation build Lgg/l;
+        .end annotation
+    .end param
+    .param p2    # Lkotlin/coroutines/d;
+        .annotation build Lgg/l;
+        .end annotation
+    .end param
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Landroidx/privacysandbox/ads/adservices/measurement/a;",
+            "Lkotlin/coroutines/d<",
+            "-",
+            "Lkotlin/i2;",
+            ">;)",
+            "Ljava/lang/Object;"
+        }
+    .end annotation
+
+    .annotation build Lgg/m;
+    .end annotation
+.end method
+
+.method public abstract b(Lkotlin/coroutines/d;)Ljava/lang/Object;
+    .param p1    # Lkotlin/coroutines/d;
+        .annotation build Lgg/l;
+        .end annotation
+    .end param
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lkotlin/coroutines/d<",
+            "-",
+            "Ljava/lang/Integer;",
+            ">;)",
+            "Ljava/lang/Object;"
+        }
+    .end annotation
+
+    .annotation build Le/a1;
+    .end annotation
+
+    .annotation build Lgg/m;
+    .end annotation
+.end method
+
+.method public abstract d(Landroid/net/Uri;Landroid/view/InputEvent;Lkotlin/coroutines/d;)Ljava/lang/Object;
+    .param p1    # Landroid/net/Uri;
+        .annotation build Lgg/l;
+        .end annotation
+    .end param
+    .param p2    # Landroid/view/InputEvent;
+        .annotation build Lgg/m;
+        .end annotation
+    .end param
+    .param p3    # Lkotlin/coroutines/d;
+        .annotation build Lgg/l;
+        .end annotation
+    .end param
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Landroid/net/Uri;",
+            "Landroid/view/InputEvent;",
+            "Lkotlin/coroutines/d<",
+            "-",
+            "Lkotlin/i2;",
+            ">;)",
+            "Ljava/lang/Object;"
+        }
+    .end annotation
+
+    .annotation build Le/a1;
+    .end annotation
+
+    .annotation build Lgg/m;
+    .end annotation
+.end method
+
+.method public abstract e(Landroid/net/Uri;Lkotlin/coroutines/d;)Ljava/lang/Object;
+    .param p1    # Landroid/net/Uri;
+        .annotation build Lgg/l;
+        .end annotation
+    .end param
+    .param p2    # Lkotlin/coroutines/d;
+        .annotation build Lgg/l;
+        .end annotation
+    .end param
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Landroid/net/Uri;",
+            "Lkotlin/coroutines/d<",
+            "-",
+            "Lkotlin/i2;",
+            ">;)",
+            "Ljava/lang/Object;"
+        }
+    .end annotation
+
+    .annotation build Le/a1;
+    .end annotation
+
+    .annotation build Lgg/m;
+    .end annotation
+.end method
+
+.method public abstract f(Landroidx/privacysandbox/ads/adservices/measurement/d;Lkotlin/coroutines/d;)Ljava/lang/Object;
+    .param p1    # Landroidx/privacysandbox/ads/adservices/measurement/d;
+        .annotation build Lgg/l;
+        .end annotation
+    .end param
+    .param p2    # Lkotlin/coroutines/d;
+        .annotation build Lgg/l;
+        .end annotation
+    .end param
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Landroidx/privacysandbox/ads/adservices/measurement/d;",
+            "Lkotlin/coroutines/d<",
+            "-",
+            "Lkotlin/i2;",
+            ">;)",
+            "Ljava/lang/Object;"
+        }
+    .end annotation
+
+    .annotation build Le/a1;
+    .end annotation
+
+    .annotation build Lgg/m;
+    .end annotation
+.end method
+
+.method public abstract g(Landroidx/privacysandbox/ads/adservices/measurement/f;Lkotlin/coroutines/d;)Ljava/lang/Object;
+    .param p1    # Landroidx/privacysandbox/ads/adservices/measurement/f;
+        .annotation build Lgg/l;
+        .end annotation
+    .end param
+    .param p2    # Lkotlin/coroutines/d;
+        .annotation build Lgg/l;
+        .end annotation
+    .end param
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Landroidx/privacysandbox/ads/adservices/measurement/f;",
+            "Lkotlin/coroutines/d<",
+            "-",
+            "Lkotlin/i2;",
+            ">;)",
+            "Ljava/lang/Object;"
+        }
+    .end annotation
+
+    .annotation build Le/a1;
+    .end annotation
+
+    .annotation build Lgg/m;
+    .end annotation
+.end method

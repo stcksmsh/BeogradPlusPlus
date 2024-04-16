@@ -1,0 +1,270 @@
+.class public Lorg/bouncycastle/asn1/x9/g;
+.super Lorg/bouncycastle/asn1/p;
+
+
+# instance fields
+.field public final a:Lorg/bouncycastle/asn1/x9/f;
+
+.field public final b:Lorg/bouncycastle/asn1/r;
+
+.field public final c:Lorg/bouncycastle/asn1/r;
+
+
+# direct methods
+.method public constructor <init>(Lorg/bouncycastle/asn1/v;)V
+    .locals 3
+
+    .line 1
+    invoke-direct {p0}, Lorg/bouncycastle/asn1/p;-><init>()V
+
+    .line 2
+    .line 3
+    .line 4
+    invoke-virtual {p1}, Lorg/bouncycastle/asn1/v;->E()Ljava/util/Enumeration;
+
+    .line 5
+    .line 6
+    .line 7
+    move-result-object p1
+
+    .line 8
+    invoke-interface {p1}, Ljava/util/Enumeration;->nextElement()Ljava/lang/Object;
+
+    .line 9
+    .line 10
+    .line 11
+    move-result-object v0
+
+    .line 12
+    invoke-static {v0}, Lorg/bouncycastle/asn1/x9/f;->l(Ljava/lang/Object;)Lorg/bouncycastle/asn1/x9/f;
+
+    .line 13
+    .line 14
+    .line 15
+    move-result-object v0
+
+    .line 16
+    iput-object v0, p0, Lorg/bouncycastle/asn1/x9/g;->a:Lorg/bouncycastle/asn1/x9/f;
+
+    .line 17
+    .line 18
+    :cond_0
+    :goto_0
+    invoke-interface {p1}, Ljava/util/Enumeration;->hasMoreElements()Z
+
+    .line 19
+    .line 20
+    .line 21
+    move-result v0
+
+    .line 22
+    if-eqz v0, :cond_2
+
+    .line 23
+    .line 24
+    invoke-interface {p1}, Ljava/util/Enumeration;->nextElement()Ljava/lang/Object;
+
+    .line 25
+    .line 26
+    .line 27
+    move-result-object v0
+
+    .line 28
+    check-cast v0, Lorg/bouncycastle/asn1/c0;
+
+    .line 29
+    .line 30
+    iget v1, v0, Lorg/bouncycastle/asn1/c0;->a:I
+
+    .line 31
+    .line 32
+    if-nez v1, :cond_1
+
+    .line 33
+    .line 34
+    invoke-virtual {v0}, Lorg/bouncycastle/asn1/c0;->D()Lorg/bouncycastle/asn1/u;
+
+    .line 35
+    .line 36
+    .line 37
+    move-result-object v0
+
+    .line 38
+    check-cast v0, Lorg/bouncycastle/asn1/r;
+
+    .line 39
+    .line 40
+    iput-object v0, p0, Lorg/bouncycastle/asn1/x9/g;->b:Lorg/bouncycastle/asn1/r;
+
+    .line 41
+    .line 42
+    goto :goto_0
+
+    .line 43
+    :cond_1
+    const/4 v2, 0x2
+
+    .line 44
+    if-ne v1, v2, :cond_0
+
+    .line 45
+    .line 46
+    invoke-virtual {v0}, Lorg/bouncycastle/asn1/c0;->D()Lorg/bouncycastle/asn1/u;
+
+    .line 47
+    .line 48
+    .line 49
+    move-result-object v0
+
+    .line 50
+    check-cast v0, Lorg/bouncycastle/asn1/r;
+
+    .line 51
+    .line 52
+    iput-object v0, p0, Lorg/bouncycastle/asn1/x9/g;->c:Lorg/bouncycastle/asn1/r;
+
+    .line 53
+    .line 54
+    goto :goto_0
+
+    .line 55
+    :cond_2
+    return-void
+.end method
+
+.method public static l(Ljava/lang/Object;)Lorg/bouncycastle/asn1/x9/g;
+    .locals 1
+
+    .line 1
+    instance-of v0, p0, Lorg/bouncycastle/asn1/x9/g;
+
+    .line 2
+    .line 3
+    if-eqz v0, :cond_0
+
+    .line 4
+    .line 5
+    check-cast p0, Lorg/bouncycastle/asn1/x9/g;
+
+    .line 6
+    .line 7
+    return-object p0
+
+    .line 8
+    :cond_0
+    if-eqz p0, :cond_1
+
+    .line 9
+    .line 10
+    new-instance v0, Lorg/bouncycastle/asn1/x9/g;
+
+    .line 11
+    .line 12
+    invoke-static {p0}, Lorg/bouncycastle/asn1/v;->B(Ljava/lang/Object;)Lorg/bouncycastle/asn1/v;
+
+    .line 13
+    .line 14
+    .line 15
+    move-result-object p0
+
+    .line 16
+    invoke-direct {v0, p0}, Lorg/bouncycastle/asn1/x9/g;-><init>(Lorg/bouncycastle/asn1/v;)V
+
+    .line 17
+    .line 18
+    .line 19
+    return-object v0
+
+    .line 20
+    :cond_1
+    const/4 p0, 0x0
+
+    .line 21
+    return-object p0
+.end method
+
+
+# virtual methods
+.method public final d()Lorg/bouncycastle/asn1/u;
+    .locals 4
+
+    .line 1
+    new-instance v0, Lorg/bouncycastle/asn1/g;
+
+    .line 2
+    .line 3
+    const/4 v1, 0x3
+
+    .line 4
+    invoke-direct {v0, v1}, Lorg/bouncycastle/asn1/g;-><init>(I)V
+
+    .line 5
+    .line 6
+    .line 7
+    iget-object v1, p0, Lorg/bouncycastle/asn1/x9/g;->a:Lorg/bouncycastle/asn1/x9/f;
+
+    .line 8
+    .line 9
+    invoke-virtual {v0, v1}, Lorg/bouncycastle/asn1/g;->a(Lorg/bouncycastle/asn1/f;)V
+
+    .line 10
+    .line 11
+    .line 12
+    iget-object v1, p0, Lorg/bouncycastle/asn1/x9/g;->b:Lorg/bouncycastle/asn1/r;
+
+    .line 13
+    .line 14
+    if-eqz v1, :cond_0
+
+    .line 15
+    .line 16
+    new-instance v2, Lorg/bouncycastle/asn1/z1;
+
+    .line 17
+    .line 18
+    const/4 v3, 0x0
+
+    .line 19
+    invoke-direct {v2, v3, v1}, Lorg/bouncycastle/asn1/z1;-><init>(ILorg/bouncycastle/asn1/f;)V
+
+    .line 20
+    .line 21
+    .line 22
+    invoke-virtual {v0, v2}, Lorg/bouncycastle/asn1/g;->a(Lorg/bouncycastle/asn1/f;)V
+
+    .line 23
+    .line 24
+    .line 25
+    :cond_0
+    new-instance v1, Lorg/bouncycastle/asn1/z1;
+
+    .line 26
+    .line 27
+    const/4 v2, 0x2
+
+    .line 28
+    iget-object v3, p0, Lorg/bouncycastle/asn1/x9/g;->c:Lorg/bouncycastle/asn1/r;
+
+    .line 29
+    .line 30
+    invoke-direct {v1, v2, v3}, Lorg/bouncycastle/asn1/z1;-><init>(ILorg/bouncycastle/asn1/f;)V
+
+    .line 31
+    .line 32
+    .line 33
+    invoke-virtual {v0, v1}, Lorg/bouncycastle/asn1/g;->a(Lorg/bouncycastle/asn1/f;)V
+
+    .line 34
+    .line 35
+    .line 36
+    new-instance v1, Lorg/bouncycastle/asn1/s1;
+
+    .line 37
+    .line 38
+    invoke-direct {v1, v0}, Lorg/bouncycastle/asn1/s1;-><init>(Lorg/bouncycastle/asn1/g;)V
+
+    .line 39
+    .line 40
+    .line 41
+    return-object v1
+.end method

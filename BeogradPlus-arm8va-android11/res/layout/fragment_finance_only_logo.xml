@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="14.0sp" android:id="@id/finance_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/cash_entry" android:layout_alignParentTop="true" android:layout_centerHorizontal="true" android:textAllCaps="true" android:paddingStart="10.0dip" android:paddingEnd="10.0dip" />
+    <View android:id="@id/first_row_line" android:background="@color/primary" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_marginTop="5.0dip" android:layout_marginBottom="5.0dip" android:layout_below="@id/finance_title" />
+    <RelativeLayout android:id="@id/show_logo" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/first_row_line" android:layout_alignParentBottom="true">
+        <ImageView android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/jgsp_ns_logo" android:layout_centerInParent="true" android:layout_marginStart="50.0dip" />
+    </RelativeLayout>
+</RelativeLayout>

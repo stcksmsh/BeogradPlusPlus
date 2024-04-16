@@ -1,0 +1,40 @@
+.class public final Lcom/budiyev/android/codescanner/CodeScannerException;
+.super Ljava/lang/RuntimeException;
+.source "CodeScannerException.java"
+
+
+# direct methods
+.method public constructor <init>()V
+    .locals 0
+
+    .line 1
+    invoke-direct {p0}, Ljava/lang/RuntimeException;-><init>()V
+
+    return-void
+.end method
+
+.method public constructor <init>(Ljava/lang/String;)V
+    .locals 0
+    .param p1    # Ljava/lang/String;
+        .annotation build Le/q0;
+        .end annotation
+    .end param
+
+    .line 2
+    invoke-direct {p0, p1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
+
+    return-void
+.end method
+
+.method public constructor <init>(Ljava/lang/Throwable;)V
+    .locals 0
+    .param p1    # Ljava/lang/Throwable;
+        .annotation build Le/q0;
+        .end annotation
+    .end param
+
+    .line 3
+    invoke-direct {p0, p1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V
+
+    return-void
+.end method

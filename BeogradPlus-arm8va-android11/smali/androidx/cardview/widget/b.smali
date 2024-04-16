@@ -1,0 +1,22 @@
+.class Landroidx/cardview/widget/b;
+.super Landroidx/cardview/widget/e;
+.source "CardViewApi17Impl.java"
+
+
+# annotations
+.annotation build Le/w0;
+.end annotation
+
+
+# direct methods
+.method public constructor <init>()V
+    .locals 0
+
+    .line 1
+    invoke-direct {p0}, Landroidx/cardview/widget/e;-><init>()V
+
+    .line 2
+    .line 3
+    .line 4
+    return-void
+.end method

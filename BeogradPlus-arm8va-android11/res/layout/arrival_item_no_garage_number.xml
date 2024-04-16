@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@id/arrival_item" android:background="@drawable/shadow_23832" android:layout_width="fill_parent" android:layout_height="76.0dip" android:layout_marginStart="10.0dip" android:layout_marginEnd="10.0dip">
+        <ImageView android:id="@id/green_field" android:layout_width="fill_parent" android:layout_height="66.19998dip" android:src="@drawable/green_field" android:layout_alignParentTop="true" />
+        <ImageView android:id="@id/green_circle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/line_number_circle" android:layout_alignTop="@id/green_field" android:layout_alignBottom="@id/green_field" android:layout_marginStart="9.0dip" android:layout_marginEnd="10.0dip" android:layout_alignParentEnd="true" />
+        <RelativeLayout android:gravity="center" android:id="@id/arrival_text_container" android:layout_width="wrap_content" android:layout_height="66.19998dip" android:layout_alignStart="@id/green_circle" android:layout_alignEnd="@id/green_circle">
+            <TextView android:textSize="16.0sp" android:textColor="@color/black_color" android:gravity="bottom" android:id="@id/arrival_time" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="37" android:singleLine="true" android:layout_centerHorizontal="true" />
+            <TextView android:textSize="12.0sp" android:textColor="@color/black_color" android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="min" android:singleLine="true" android:layout_below="@id/arrival_time" android:layout_centerHorizontal="true" />
+        </RelativeLayout>
+        <ImageView android:id="@id/grey_field" android:layout_width="fill_parent" android:layout_height="66.19998dip" android:src="@drawable/grey_field" android:layout_toStartOf="@id/green_circle" />
+        <ImageView android:id="@id/blue_field" android:layout_width="fill_parent" android:layout_height="66.19998dip" android:src="@drawable/blue_field" android:layout_marginStart="2.0dip" android:layout_toStartOf="@id/line_number" />
+        <TextView android:textSize="14.0sp" android:textColor="@color/white_color" android:gravity="center" android:id="@id/line_title" android:layout_width="wrap_content" android:layout_height="66.19998dip" android:text="\ 7777777777777777777777777444444477777777777777777777777777777777777777777777777777777777777777777777777777" android:maxLines="4" android:singleLine="false" android:paddingStart="5.0dip" android:layout_marginEnd="15.0dip" android:layout_toEndOf="@id/grey_circle" android:layout_alignEnd="@id/blue_field" />
+        <TextView android:textSize="16.0sp" android:textColor="@color/black_color" android:gravity="center" android:id="@id/line_number" android:layout_width="wrap_content" android:layout_height="66.19998dip" android:singleLine="true" android:layout_alignEnd="@id/grey_field" />
+        <ImageView android:id="@id/grey_circle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/grey_circle" android:layout_alignParentStart="true" />
+        <RelativeLayout android:id="@id/garage_bus" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5.899994dip" android:layout_marginStart="5.899994dip">
+            <ImageView android:id="@id/bus_icon_top" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_busssssssss__ok" />
+            <TextView android:textSize="14.0sp" android:textColor="@color/black_color" android:id="@id/garage_number" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="7.0dip" android:text="8888" android:layout_alignBottom="@id/bus_icon_top" android:layout_centerHorizontal="true" />
+        </RelativeLayout>
+    </RelativeLayout>
+</RelativeLayout>

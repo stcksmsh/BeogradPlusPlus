@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:id="@id/add_funds_container" android:background="@drawable/finance_container" android:paddingTop="20.0dip" android:paddingBottom="20.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="20.0dip" android:layout_marginBottom="30.0dip" android:layout_marginStart="20.0dip" android:layout_marginEnd="20.0dip">
+        <LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <TextView android:textSize="14.0sp" android:textStyle="bold" android:textColor="@color/white_color" android:id="@id/balance_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/balance_finance" />
+            <LinearLayout android:orientation="horizontal" android:id="@id/finance_container" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="50.0dip">
+                <TextView android:textSize="20.0sp" android:textColor="@color/white_color" android:id="@id/currency_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="RSD" />
+                <TextView android:textSize="20.0sp" android:textStyle="bold" android:textColor="@color/white_color" android:id="@id/money_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0.00" android:paddingStart="5.0dip" />
+            </LinearLayout>
+            <ProgressBar android:id="@id/loading" android:layout_width="wrap_content" android:layout_height="50.0dip" android:indeterminate="true" android:indeterminateTint="@color/white_color" android:indeterminateTintMode="src_atop" />
+        </LinearLayout>
+        <LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="15.0dip">
+            <Button android:textColor="@color/white_color" android:id="@id/extend_card" android:background="@drawable/standard_green_button" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/extend_button" android:paddingStart="20.0dip" android:paddingEnd="20.0dip" />
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

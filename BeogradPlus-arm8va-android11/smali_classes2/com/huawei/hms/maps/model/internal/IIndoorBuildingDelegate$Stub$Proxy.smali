@@ -1,0 +1,290 @@
+.class Lcom/huawei/hms/maps/model/internal/IIndoorBuildingDelegate$Stub$Proxy;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lcom/huawei/hms/maps/model/internal/IIndoorBuildingDelegate;
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/huawei/hms/maps/model/internal/IIndoorBuildingDelegate$Stub;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x9
+    name = "Proxy"
+.end annotation
+
+
+# instance fields
+.field private a:Landroid/os/IBinder;
+
+
+# direct methods
+.method public constructor <init>(Landroid/os/IBinder;)V
+    .locals 0
+
+    .line 1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 2
+    .line 3
+    .line 4
+    iput-object p1, p0, Lcom/huawei/hms/maps/model/internal/IIndoorBuildingDelegate$Stub$Proxy;->a:Landroid/os/IBinder;
+
+    .line 5
+    .line 6
+    return-void
+.end method
+
+
+# virtual methods
+.method public asBinder()Landroid/os/IBinder;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/huawei/hms/maps/model/internal/IIndoorBuildingDelegate$Stub$Proxy;->a:Landroid/os/IBinder;
+
+    .line 2
+    .line 3
+    return-object v0
+.end method
+
+.method public equalsRemote(Lcom/huawei/hms/maps/model/internal/IIndoorBuildingDelegate;)Z
+    .locals 3
+
+    .line 1
+    iget-object v0, p0, Lcom/huawei/hms/maps/model/internal/IIndoorBuildingDelegate$Stub$Proxy;->a:Landroid/os/IBinder;
+
+    .line 2
+    .line 3
+    const-string v1, "com.huawei.hms.maps.model.internal.IIndoorBuildingDelegate"
+
+    .line 4
+    .line 5
+    const/4 v2, 0x5
+
+    .line 6
+    invoke-static {p1, v0, v1, v2}, Lcom/huawei/hms/maps/model/internal/mab;->a(Landroid/os/IInterface;Landroid/os/IBinder;Ljava/lang/String;I)Z
+
+    .line 7
+    .line 8
+    .line 9
+    move-result p1
+
+    .line 10
+    return p1
+.end method
+
+.method public getActiveLevelIndex()I
+    .locals 3
+
+    .line 1
+    iget-object v0, p0, Lcom/huawei/hms/maps/model/internal/IIndoorBuildingDelegate$Stub$Proxy;->a:Landroid/os/IBinder;
+
+    .line 2
+    .line 3
+    const-string v1, "com.huawei.hms.maps.model.internal.IIndoorBuildingDelegate"
+
+    .line 4
+    .line 5
+    const/4 v2, 0x1
+
+    .line 6
+    invoke-static {v0, v1, v2}, Lcom/huawei/hms/maps/model/internal/mab;->b(Landroid/os/IBinder;Ljava/lang/String;I)I
+
+    .line 7
+    .line 8
+    .line 9
+    move-result v0
+
+    .line 10
+    return v0
+.end method
+
+.method public getDefaultLevelIndex()I
+    .locals 3
+
+    .line 1
+    iget-object v0, p0, Lcom/huawei/hms/maps/model/internal/IIndoorBuildingDelegate$Stub$Proxy;->a:Landroid/os/IBinder;
+
+    .line 2
+    .line 3
+    const-string v1, "com.huawei.hms.maps.model.internal.IIndoorBuildingDelegate"
+
+    .line 4
+    .line 5
+    const/4 v2, 0x2
+
+    .line 6
+    invoke-static {v0, v1, v2}, Lcom/huawei/hms/maps/model/internal/mab;->b(Landroid/os/IBinder;Ljava/lang/String;I)I
+
+    .line 7
+    .line 8
+    .line 9
+    move-result v0
+
+    .line 10
+    return v0
+.end method
+
+.method public getInterfaceDescriptor()Ljava/lang/String;
+    .locals 1
+
+    .line 1
+    const-string v0, "com.huawei.hms.maps.model.internal.IIndoorBuildingDelegate"
+
+    .line 2
+    .line 3
+    return-object v0
+.end method
+
+.method public getLevels()Ljava/util/List;
+    .locals 5
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/List<",
+            "Landroid/os/IBinder;",
+            ">;"
+        }
+    .end annotation
+
+    .line 1
+    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object v0
+
+    .line 5
+    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+
+    .line 6
+    .line 7
+    .line 8
+    move-result-object v1
+
+    .line 9
+    :try_start_0
+    const-string v2, "com.huawei.hms.maps.model.internal.IIndoorBuildingDelegate"
+
+    .line 10
+    .line 11
+    invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
+
+    .line 12
+    .line 13
+    .line 14
+    iget-object v2, p0, Lcom/huawei/hms/maps/model/internal/IIndoorBuildingDelegate$Stub$Proxy;->a:Landroid/os/IBinder;
+
+    .line 15
+    .line 16
+    const/4 v3, 0x3
+
+    .line 17
+    const/4 v4, 0x0
+
+    .line 18
+    invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+
+    .line 19
+    .line 20
+    .line 21
+    invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
+
+    .line 22
+    .line 23
+    .line 24
+    invoke-virtual {v1}, Landroid/os/Parcel;->createBinderArrayList()Ljava/util/ArrayList;
+
+    .line 25
+    .line 26
+    .line 27
+    move-result-object v2
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 28
+    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
+
+    .line 29
+    .line 30
+    .line 31
+    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
+
+    .line 32
+    .line 33
+    .line 34
+    return-object v2
+
+    .line 35
+    :catchall_0
+    move-exception v2
+
+    .line 36
+    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
+
+    .line 37
+    .line 38
+    .line 39
+    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
+
+    .line 40
+    .line 41
+    .line 42
+    throw v2
+.end method
+
+.method public hashCodeRemote()I
+    .locals 3
+
+    .line 1
+    iget-object v0, p0, Lcom/huawei/hms/maps/model/internal/IIndoorBuildingDelegate$Stub$Proxy;->a:Landroid/os/IBinder;
+
+    .line 2
+    .line 3
+    const-string v1, "com.huawei.hms.maps.model.internal.IIndoorBuildingDelegate"
+
+    .line 4
+    .line 5
+    const/4 v2, 0x6
+
+    .line 6
+    invoke-static {v0, v1, v2}, Lcom/huawei/hms/maps/model/internal/mab;->b(Landroid/os/IBinder;Ljava/lang/String;I)I
+
+    .line 7
+    .line 8
+    .line 9
+    move-result v0
+
+    .line 10
+    return v0
+.end method
+
+.method public isUnderground()Z
+    .locals 3
+
+    .line 1
+    iget-object v0, p0, Lcom/huawei/hms/maps/model/internal/IIndoorBuildingDelegate$Stub$Proxy;->a:Landroid/os/IBinder;
+
+    .line 2
+    .line 3
+    const-string v1, "com.huawei.hms.maps.model.internal.IIndoorBuildingDelegate"
+
+    .line 4
+    .line 5
+    const/4 v2, 0x4
+
+    .line 6
+    invoke-static {v0, v1, v2}, Lcom/huawei/hms/maps/model/internal/mab;->a(Landroid/os/IBinder;Ljava/lang/String;I)Z
+
+    .line 7
+    .line 8
+    .line 9
+    move-result v0
+
+    .line 10
+    return v0
+.end method

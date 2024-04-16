@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="30.0dip" android:textStyle="bold" android:gravity="center" android:id="@id/seconds_remain" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="30.0dip" android:text="Generisani qr kod" />
+    <View android:id="@id/first_row_line" android:background="@color/colorPrimary" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_marginTop="30.0dip" android:layout_below="@id/seconds_remain" android:layout_marginStart="10.0dip" android:layout_marginEnd="10.0dip" />
+    <ProgressBar android:id="@id/progress_bar_qr" android:layout_width="wrap_content" android:layout_height="300.0dip" android:layout_marginTop="20.0dip" android:layout_marginBottom="20.0dip" android:layout_centerInParent="true" android:layout_centerHorizontal="true" />
+    <TextView android:textSize="20.0dip" android:textStyle="bold" android:gravity="center" android:id="@id/no_journal_log" android:visibility="invisible" android:layout_width="fill_parent" android:layout_height="300.0dip" android:layout_margin="30.0dip" android:text="@string/individual_transactions_no_journal_log" android:layout_centerInParent="true" />
+    <ImageView android:id="@id/idIVQrcode" android:visibility="invisible" android:layout_width="300.0dip" android:layout_height="300.0dip" android:layout_marginTop="20.0dip" android:layout_marginBottom="5.0dip" android:layout_below="@id/first_row_line" android:layout_centerHorizontal="true" android:contentDescription="@string/qr_code_description" />
+    <Button android:id="@id/finish_button" android:visibility="invisible" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="30.0dip" android:text="@string/global_close" android:layout_below="@id/idIVQrcode" android:layout_centerHorizontal="true" />
+    <Button android:id="@id/finish_button2" android:visibility="invisible" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="30.0dip" android:text="@string/global_close" android:layout_below="@id/no_journal_log" android:layout_centerHorizontal="true" />
+</RelativeLayout>

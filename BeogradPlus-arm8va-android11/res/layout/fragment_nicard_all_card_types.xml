@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/nicard_relative_layout" android:background="@drawable/background" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:orientation="horizontal" android:id="@id/header_title" android:paddingTop="40.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:scaleX="0.7" android:scaleY="0.7" android:layout_marginStart="30.0dip" android:layout_marginEnd="30.0dip">
+        <ImageView android:id="@id/logo_nis" android:layout_width="wrap_content" android:layout_height="130.0dip" android:src="@drawable/brand_logo" android:layout_centerHorizontal="true" />
+        <TextView android:textSize="16.0dip" android:textColor="@color/white_color_only" android:id="@id/nicard_details_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:text="@string/select_an_existing_card" android:layout_below="@id/logo_nis" android:layout_centerHorizontal="true" android:textAlignment="center" />
+    </RelativeLayout>
+    <ImageView android:id="@id/image_back" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="50.0dip" android:src="@drawable/back" android:layout_alignParentTop="true" android:scaleX="0.8" android:scaleY="0.8" android:layout_marginStart="20.0dip" android:layout_alignParentStart="true" />
+    <LinearLayout android:id="@id/relative_monthly_card" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_below="@id/header_title">
+        <LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:id="@id/monthly_card_linear_layout_container" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="5.0dip">
+            <ListView android:id="@id/monthly_card_list_view" android:layout_width="fill_parent" android:layout_height="fill_parent" android:dividerHeight="5.0dip" />
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:id="@id/ewallet_linear_layout_container" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_above="@id/bottom_layout" android:layout_below="@id/relative_monthly_card">
+        <ListView android:id="@id/ewallet_card_list_view" android:layout_width="fill_parent" android:layout_height="fill_parent" android:dividerHeight="5.0dip" />
+    </LinearLayout>
+    <RelativeLayout android:id="@id/bottom_layout" android:paddingTop="20.0dip" android:paddingBottom="100.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true">
+        <android.widget.Button android:textSize="12.0dip" android:textColor="@color/white_color_only" android:id="@id/refresh_button" android:background="@drawable/button_with_feedback" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/refresh" android:layout_alignParentTop="true" android:layout_centerHorizontal="true" android:paddingStart="20.0dip" android:paddingEnd="20.0dip" />
+        <ProgressBar android:id="@id/refresh_progress" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:indeterminate="true" android:layout_alignParentTop="true" android:layout_centerHorizontal="true" android:indeterminateTintMode="src_atop" />
+        <android.widget.Button android:textSize="12.0dip" android:textColor="@color/white_color_only" android:id="@id/add_new_nicard" android:background="@drawable/button_with_feedback" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:text="@string/add_a_new_card" android:layout_below="@id/refresh_button" android:layout_centerHorizontal="true" android:paddingStart="20.0dip" android:paddingEnd="20.0dip" />
+    </RelativeLayout>
+</RelativeLayout>

@@ -1,0 +1,54 @@
+.class public final Lio/reactivex/internal/operators/single/f;
+.super Lio/reactivex/k0;
+.source "SingleDelay.java"
+
+
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lio/reactivex/internal/operators/single/f$a;
+    }
+.end annotation
+
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "<T:",
+        "Ljava/lang/Object;",
+        ">",
+        "Lio/reactivex/k0<",
+        "TT;>;"
+    }
+.end annotation
+
+
+# virtual methods
+.method public final O(Lio/reactivex/n0;)V
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lio/reactivex/n0<",
+            "-TT;>;)V"
+        }
+    .end annotation
+
+    .line 1
+    new-instance v0, Lu9/h;
+
+    .line 2
+    .line 3
+    invoke-direct {v0}, Lu9/h;-><init>()V
+
+    .line 4
+    .line 5
+    .line 6
+    invoke-interface {p1, v0}, Lio/reactivex/n0;->e(Lio/reactivex/disposables/c;)V
+
+    .line 7
+    .line 8
+    .line 9
+    const/4 p1, 0x0
+
+    .line 10
+    throw p1
+.end method

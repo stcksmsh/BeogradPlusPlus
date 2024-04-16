@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:weightSum="5.0"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="14.0sp" android:gravity="center" android:id="@id/date_time" android:background="@drawable/table_content_cell_bg" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.2" style="@style/SimpleBreakStrategy" />
+    <TextView android:textSize="14.0sp" android:gravity="center" android:id="@id/amount" android:background="@drawable/table_content_cell_bg" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0" style="@style/SimpleBreakStrategy" />
+    <TextView android:textSize="14.0sp" android:gravity="center" android:id="@id/status" android:background="@drawable/table_content_cell_bg" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0" style="@style/SimpleBreakStrategy" />
+    <TextView android:textSize="14.0sp" android:gravity="center" android:id="@id/show_row_info_text" android:background="@drawable/table_content_cell_bg" android:visibility="gone" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="0.9" style="@style/SimpleBreakStrategy" />
+    <TextView android:textSize="14.0sp" android:gravity="center" android:id="@id/show_row_qr_code_text" android:background="@drawable/table_content_cell_bg" android:visibility="gone" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="0.9" style="@style/SimpleBreakStrategy" />
+    <ImageButton android:id="@id/show_row_info_btn" android:background="@drawable/table_content_cell_bg" android:visibility="gone" android:layout_width="0.0dip" android:layout_height="wrap_content" android:src="@drawable/individual_transactions_info_icon" android:scaleType="fitCenter" android:layout_weight="0.9" />
+    <ImageButton android:id="@id/show_row_qr_code_btn" android:background="@drawable/table_content_cell_bg" android:visibility="gone" android:layout_width="0.0dip" android:layout_height="wrap_content" android:src="@drawable/individual_transactions_qr_code_icon" android:scaleType="fitCenter" android:layout_weight="0.9" />
+</LinearLayout>

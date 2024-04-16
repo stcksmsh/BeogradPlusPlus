@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <RelativeLayout android:orientation="horizontal" android:id="@id/title_setting_layout" android:background="@color/primary" android:paddingTop="40.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <ImageView android:id="@id/logo_nis" android:layout_width="fill_parent" android:layout_height="wrap_content" android:src="@drawable/ns_direkcija" android:adjustViewBounds="true" android:layout_centerHorizontal="true" android:contentDescription="logo_nis" android:scaleX="0.7" android:scaleY="0.7" android:layout_marginStart="30.0dip" android:layout_marginEnd="30.0dip" />
+    </RelativeLayout>
+    <com.google.android.material.tabs.TabLayout android:id="@id/settings_tab_layout" android:background="@color/primary_light" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/title_setting_layout" app:tabIndicatorColor="@color/tab_indicator_color" app:tabRippleColor="@color/tab_ripple_color" app:tabSelectedTextColor="@color/tab_selected_text_color" app:tabTextColor="@color/tab_text_color" />
+    <androidx.viewpager2.widget.ViewPager2 android:id="@id/settings_view_pager2" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/settings_tab_layout" android:layout_alignParentStart="true" />
+</RelativeLayout>

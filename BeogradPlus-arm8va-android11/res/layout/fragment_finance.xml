@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="14.0dip" android:id="@id/finance_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/cash_entry" android:layout_alignParentTop="true" android:layout_centerHorizontal="true" android:textAllCaps="true" android:paddingStart="10.0dip" android:paddingEnd="10.0dip" />
+    <View android:id="@id/first_row_line" android:background="@color/primary" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_marginTop="5.0dip" android:layout_below="@id/finance_title" />
+    <ScrollView android:id="@id/scroll_view" android:scrollbars="none" android:fadingEdgeLength="20.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/first_row_line" android:overScrollMode="never" android:requiresFadingEdge="vertical">
+        <RelativeLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@id/articles_container" android:background="@drawable/pozadina_prodaja_karata" android:paddingTop="20.0dip" android:paddingBottom="20.0dip" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="140.0dip" android:layout_marginTop="15.0dip" android:layout_marginBottom="20.0dip" android:layout_marginStart="20.0dip" android:layout_marginEnd="20.0dip">
+                <LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="0.5" android:paddingStart="20.0dip">
+                    <TextView android:textSize="16.0dip" android:textStyle="bold" android:textColor="@color/white_color_only" android:id="@id/articles_tv" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/ticket_purchase" />
+                </LinearLayout>
+                <LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="0.5">
+                    <android.widget.Button android:id="@id/articles_btn" android:background="@drawable/ticket_button" android:layout_width="70.0dip" android:layout_height="70.0dip" />
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@id/add_funds_container" android:background="@drawable/pozadina_avans" android:paddingTop="5.0dip" android:paddingBottom="5.0dip" android:layout_width="fill_parent" android:layout_height="140.0dip" android:layout_marginBottom="20.0dip" android:layout_below="@id/articles_container" android:layout_marginStart="20.0dip" android:layout_marginEnd="20.0dip" android:elevation="10.0dip">
+                <LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="0.5" android:paddingStart="20.0dip">
+                    <TextView android:textSize="14.0dip" android:textStyle="bold" android:textColor="@color/white_color_only" android:id="@id/balance_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/balance_finance" />
+                    <LinearLayout android:orientation="horizontal" android:id="@id/finance_container" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                        <TextView android:textSize="20.0dip" android:textStyle="bold" android:textColor="@color/white_color_only" android:id="@id/money_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0.00" android:layout_marginEnd="5.0dip" />
+                        <TextView android:textSize="20.0dip" android:textColor="@color/white_color_only" android:id="@id/currency_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="RSD" />
+                    </LinearLayout>
+                    <ProgressBar android:id="@id/loading" android:layout_width="wrap_content" android:layout_height="wrap_content" android:indeterminate="true" android:indeterminateTint="@color/white_color" android:indeterminateTintMode="src_atop" />
+                </LinearLayout>
+                <LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="0.5">
+                    <android.widget.Button android:id="@id/add_more_money" android:background="@drawable/add_to_e_wallet" android:layout_width="70.0dip" android:layout_height="70.0dip" />
+                    <TextView android:textSize="14.0dip" android:textStyle="bold" android:textColor="@color/white_color_only" android:id="@id/add_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/add" />
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@id/quick_pay_container" android:background="@drawable/pozadina_qr" android:paddingTop="20.0dip" android:paddingBottom="20.0dip" android:layout_width="fill_parent" android:layout_height="140.0dip" android:layout_marginBottom="20.0dip" android:layout_below="@id/add_funds_container" android:layout_marginStart="20.0dip" android:layout_marginEnd="20.0dip">
+                <LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="0.5" android:paddingStart="20.0dip">
+                    <TextView android:textSize="14.0dip" android:textStyle="bold" android:textColor="@color/white_color_only" android:id="@id/quick_pay_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/create_qr_code_for_fast_payment" />
+                </LinearLayout>
+                <LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="0.5">
+                    <android.widget.Button android:id="@id/qr_payment_button" android:background="@drawable/qr_scan_btn_new" android:layout_width="70.0dip" android:layout_height="70.0dip" />
+                </LinearLayout>
+            </LinearLayout>
+            <TextView android:textSize="17.0dip" android:textColor="@color/red_color" android:gravity="center" android:id="@id/paying_with_mastercard_bonus_text" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:layout_marginBottom="10.0dip" android:text="@string/paying_with_mastercard_bonus_text" android:layout_below="@id/quick_pay_container" android:layout_centerHorizontal="true" android:layout_alignWithParentIfMissing="true" android:paddingStart="20.0dip" android:paddingEnd="20.0dip" />
+            <LinearLayout android:orientation="vertical" android:id="@id/cards_layout_new" android:paddingTop="8.0dip" android:paddingBottom="8.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="100.0dip" android:layout_below="@id/paying_with_mastercard_bonus_text" android:paddingVertical="8.0dip">
+                <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:paddingLeft="30.0dip" android:paddingRight="30.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:weightSum="4.0" android:paddingHorizontal="30.0dip">
+                    <ImageView android:layout_width="0.0dip" android:layout_height="40.0dip" android:src="@drawable/maestro_card_new" android:layout_weight="1.0" />
+                    <ImageView android:layout_width="0.0dip" android:layout_height="40.0dip" android:src="@drawable/master_card_new" android:layout_weight="1.0" />
+                    <ImageView android:layout_width="0.0dip" android:layout_height="25.0dip" android:src="@drawable/dina_card_new" android:layout_weight="1.0" />
+                    <ImageView android:layout_width="0.0dip" android:layout_height="25.0dip" android:src="@drawable/visa_card_new" android:layout_weight="1.0" />
+                </LinearLayout>
+                <ImageView android:id="@id/banca_intesa" android:paddingLeft="50.0dip" android:paddingRight="50.0dip" android:layout_width="fill_parent" android:layout_height="50.0dip" android:layout_marginTop="5.0dip" android:layout_marginBottom="5.0dip" android:src="@drawable/ic_otp_bank_logo" android:layout_marginVertical="5.0dip" android:paddingHorizontal="50.0dip" />
+                <LinearLayout android:gravity="center" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:weightSum="3.5">
+                    <ImageView android:id="@id/master_card_secure" android:layout_width="0.0dip" android:layout_height="30.0dip" android:src="@drawable/master_id_check_new" android:layout_weight="1.0" />
+                    <ImageView android:id="@id/verified_vise" android:layout_width="0.0dip" android:layout_height="30.0dip" android:src="@drawable/visa_secure_new" android:layout_weight="1.0" />
+                    <ImageView android:id="@id/all_secure" android:layout_width="0.0dip" android:layout_height="30.0dip" android:src="@drawable/ic_allsecure" android:layout_weight="1.0" />
+                </LinearLayout>
+            </LinearLayout>
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>

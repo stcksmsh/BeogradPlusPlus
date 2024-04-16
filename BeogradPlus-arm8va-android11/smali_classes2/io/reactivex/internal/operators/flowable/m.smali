@@ -1,0 +1,59 @@
+.class public final Lio/reactivex/internal/operators/flowable/m;
+.super Lio/reactivex/internal/operators/flowable/a;
+.source "FlowableBuffer.java"
+
+
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lio/reactivex/internal/operators/flowable/m$b;,
+        Lio/reactivex/internal/operators/flowable/m$c;,
+        Lio/reactivex/internal/operators/flowable/m$a;
+    }
+.end annotation
+
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "<T:",
+        "Ljava/lang/Object;",
+        "C::",
+        "Ljava/util/Collection<",
+        "-TT;>;>",
+        "Lio/reactivex/internal/operators/flowable/a<",
+        "TT;TC;>;"
+    }
+.end annotation
+
+
+# virtual methods
+.method public final j1(Lorg/reactivestreams/d;)V
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lorg/reactivestreams/d<",
+            "-TC;>;)V"
+        }
+    .end annotation
+
+    .line 1
+    new-instance v0, Lio/reactivex/internal/operators/flowable/m$a;
+
+    .line 2
+    .line 3
+    invoke-direct {v0, p1}, Lio/reactivex/internal/operators/flowable/m$a;-><init>(Lorg/reactivestreams/d;)V
+
+    .line 4
+    .line 5
+    .line 6
+    iget-object p1, p0, Lio/reactivex/internal/operators/flowable/a;->b:Lio/reactivex/l;
+
+    .line 7
+    .line 8
+    invoke-virtual {p1, v0}, Lio/reactivex/l;->i1(Lio/reactivex/q;)V
+
+    .line 9
+    .line 10
+    .line 11
+    return-void
+.end method

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="accent">#ffb2cbfc</color>
+    <color name="article_group_background">#ff1e1e1e</color>
+    <color name="black_color">#ffcdcdcd</color>
+    <color name="bottom_nav_selected">#ffb2cbfc</color>
+    <color name="bottom_nav_unselected">#ff999999</color>
+    <color name="button_color">#ff475e88</color>
+    <color name="checkbox_text_color">#ffc6c6c6</color>
+    <color name="icon_tint">#ff999999</color>
+    <color name="light_blue">#ff475e88</color>
+    <color name="light_gray">#ff282828</color>
+    <color name="main_background_color">#ff1e1e1e</color>
+    <color name="main_text_color">#ff999999</color>
+    <color name="main_text_in_background_of_primary_color">#ffcdcdcd</color>
+    <color name="navbar">#ff1e1f21</color>
+    <color name="primary">#ff1e4164</color>
+    <color name="primary_light">#ff464646</color>
+    <color name="problem_rv_color">#ff808080</color>
+    <color name="problem_rv_selected_color">#ff8f8f8f</color>
+    <color name="radio_button_tint">#ff999999</color>
+    <color name="round_search_color">#ff999999</color>
+    <color name="searchbar_background_color">#ff35363a</color>
+    <color name="status_bar">#ff1e1f21</color>
+    <color name="tab_selected">#ff999999</color>
+    <color name="tab_text_color">#ffc6c6c6</color>
+    <color name="transparent_black">#731e1e1e</color>
+    <color name="transparent_clear">#1e1e1e00</color>
+    <color name="transparent_white">#731e1e1e</color>
+    <color name="white_color">#ff1e1e1e</color>
+    <color name="white_color_only">#ffcdcdcd</color>
+    <color name="yellow">#ffc77b00</color>
+</resources>

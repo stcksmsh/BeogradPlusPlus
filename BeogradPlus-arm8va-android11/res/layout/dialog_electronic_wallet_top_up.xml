@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ProgressBar android:id="@id/loading_ewallet_dialog" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:indeterminate="true" android:layout_centerHorizontal="true" android:indeterminateTint="@color/colorPrimary" android:indeterminateTintMode="src_atop" />
+    <TextView android:textSize="17.0sp" android:id="@id/advance_funds_info" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="10.0dip" android:text="@string/balance_finance" />
+    <com.google.android.material.textfield.TextInputLayout android:id="@id/value_for_transfer_layout" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="15.0dip" android:hint="@string/enter_amount" android:layout_below="@id/loading_ewallet_dialog">
+        <com.google.android.material.textfield.TextInputEditText android:textColor="@color/black_color" android:id="@id/value_for_transfer_input" android:layout_width="fill_parent" android:layout_height="wrap_content" android:inputType="number" />
+    </com.google.android.material.textfield.TextInputLayout>
+</RelativeLayout>

@@ -1,0 +1,23 @@
+.class public final Lio/reactivex/internal/operators/completable/h0;
+.super Lio/reactivex/c;
+.source "CompletableOnErrorComplete.java"
+
+
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lio/reactivex/internal/operators/completable/h0$a;
+    }
+.end annotation
+
+
+# virtual methods
+.method public final F(Lio/reactivex/f;)V
+    .locals 0
+
+    .line 1
+    const/4 p1, 0x0
+
+    .line 2
+    throw p1
+.end method

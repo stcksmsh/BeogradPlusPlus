@@ -1,0 +1,32 @@
+.class public interface abstract Lt4/j0;
+.super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-maps@@18.1.0"
+
+# interfaces
+.implements Landroid/os/IInterface;
+
+
+# virtual methods
+.method public abstract A(Lcom/google/android/gms/internal/maps/zzaa;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract a(Lcom/google/android/gms/internal/maps/zzaa;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract d(Lcom/google/android/gms/internal/maps/zzaa;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
