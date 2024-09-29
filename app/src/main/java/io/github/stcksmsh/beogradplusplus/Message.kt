@@ -20,15 +20,17 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import java.text.SimpleDateFormat
 import java.util.*
-import java.util.concurrent.ThreadLocalRandom
 
-val dayInMillis = 24 * 60 * 60 * 1000
+val hourInMillis: Double = 60.0 * 60 * 1000
+val dayInMillis: Double  = 24 * hourInMillis
+val monthInMillis: Double = 30 * dayInMillis
+
 
 fun createDayText(currentTime: Date, textTime: Date): String{
-    var curDay: Long = currentTime.time / ( 24 * 60 * 60 * 1000 )
-    var txtDay: Long = textTime.time / ( 24 * 60 * 60 * 1000 )
+    val curDay: Long = currentTime.time / ( 24 * 60 * 60 * 1000 )
+    val txtDay: Long = textTime.time / ( 24 * 60 * 60 * 1000 )
     if(curDay == txtDay)
-        return "${SimpleDateFormat("HH:mm").format(textTime)}"
+        return SimpleDateFormat("HH:mm").format(textTime)
     if(curDay == txtDay + 1)
         return "Yesterday · ${SimpleDateFormat("HH:mm").format(textTime)}"
     var dayInWeek: String = when(txtDay%7){
@@ -79,23 +81,23 @@ fun Message(time: Date, ticketTime: Date, ticket: MutableState<String>, phoneNum
         "C30" -> "3300"
         else -> "ERROR"
     }
-    val duration:Int = when(ticket.value){
-        "A90" -> dayInMillis / 16
-        "B90" -> dayInMillis / 16
-        "C90" -> dayInMillis / 16
+    val duration: Double = when(ticket.value){
+        "A90" -> hourInMillis * 1.5
+        "B90" -> hourInMillis * 1.5
+        "C90" -> hourInMillis * 1.5
         "A1" -> dayInMillis
         "B1" -> dayInMillis
         "C1" -> dayInMillis
         "A7" -> 7 * dayInMillis
         "B7" -> 7 * dayInMillis
         "C7" -> 7 * dayInMillis
-        "A30" -> 30 * dayInMillis
-        "B30" -> 30 * dayInMillis
-        "C30" -> 30 * dayInMillis
-        else -> 0
+        "A30" -> monthInMillis
+        "B30" -> monthInMillis
+        "C30" -> monthInMillis
+        else -> 0.0
     }
-    val expTime = Date(ticketTime.time + duration)
-    val ticketNumber: String = IDGenerator(time)
+    val expTime = Date(ticketTime.time + duration.toLong())
+    val ticketNumber: String = IDGenerator(ticketTime)
     val validTime = SimpleDateFormat("HH:mm:ss").format(expTime)
     val validDate = SimpleDateFormat("dd.MM.yyyy").format(expTime)
     Column(
@@ -103,7 +105,7 @@ fun Message(time: Date, ticketTime: Date, ticket: MutableState<String>, phoneNum
             .background(Color.Transparent)
     ){
         Text(
-            text = "${dayText}",
+            text = dayText,
             textAlign = TextAlign.Center,
             modifier = Modifier
                 .fillMaxWidth()
@@ -138,11 +140,17 @@ fun Message(time: Date, ticketTime: Date, ticket: MutableState<String>, phoneNum
                         else -> "DANA"
                     }
                 } U ZONI ${ticket.value[0]} po ceni od ${price} din + osnovna cena poruke, koja vazi do ")
-                withStyle(style = SpanStyle(textDecoration = TextDecoration.Underline)){append("${validDate}")}
+                withStyle(style = SpanStyle(textDecoration = TextDecoration.Underline)){append(
+                    validDate
+                )}
                 append(" ")
-                withStyle(style = SpanStyle(textDecoration = TextDecoration.Underline)){append("${validTime}")}
+                withStyle(style = SpanStyle(textDecoration = TextDecoration.Underline)){append(
+                    validTime
+                )}
                 append(".\nKarta broj: ")
-                withStyle(style = SpanStyle(textDecoration = TextDecoration.Underline)){append("${ticketNumber}")}
+                withStyle(style = SpanStyle(textDecoration = TextDecoration.Underline)){append(
+                    ticketNumber
+                )}
                 append(".\nPlacanjem operateru izmirujete dugovanja za ovu kartu prema JKP Naplata prevozne usluge Beograd.\nSacuvajte ovu poruku.")
             },
             fontSize = 17.sp,

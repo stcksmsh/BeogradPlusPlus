@@ -1,11 +1,45 @@
+import java.nio.file.Files
+import java.nio.file.Path
+import java.nio.file.Paths
+
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
 }
 
+
+fun readPasswordFromFile(filePath: String): String {
+    val path: Path = Paths.get(filePath)
+    println("Attempting to read password from: $path") // Debug print
+    return try {
+        if (!Files.exists(path)) {
+            throw Exception("File does not exist: $filePath")
+        }
+        if (!Files.isReadable(path)) {
+            throw Exception("File is not readable: $filePath")
+        }
+
+        // Read the content of the file and trim any whitespace
+        String(Files.readAllBytes(path)).trim()
+    } catch (e: Exception) {
+        println("Error reading password from file: ${e.message}")
+        ""
+    }
+}
+
 android {
     namespace = "io.github.stcksmsh.beogradplusplus"
     compileSdk = 33
+
+    signingConfigs {
+        val password = readPasswordFromFile("release-key-password.secret")
+        create("release") {
+            storeFile = file("./release-key.jks")
+            storePassword = password
+            keyAlias = "BeogradPlusPlus"
+            keyPassword = password
+        }
+    }
 
     defaultConfig {
         applicationId = "io.github.stcksmsh.beogradplusplus"
@@ -23,6 +57,7 @@ android {
     buildTypes {
         release {
             isMinifyEnabled = false
+            signingConfig = signingConfigs.getByName("release")
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
     }
