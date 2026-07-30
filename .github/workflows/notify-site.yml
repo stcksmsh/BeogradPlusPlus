@@ -8,10 +8,19 @@ jobs:
     steps:
       - name: dispatch rebuild
         run: |
-          curl -X POST \
+          resp=$(curl -sS -w '\n%{http_code}' -X POST \
             -H "Accept: application/vnd.github+json" \
             -H "Authorization: Bearer ${{ secrets.SITE_DISPATCH_TOKEN }}" \
             https://api.github.com/repos/stcksmsh/stcksmsh.github.io/dispatches \
-            -d '{"event_type":"devlog-updated"}'
-# SITE_DISPATCH_TOKEN = a fine-grained PAT with "contents:write" (or just
-# repo dispatch) scope on the site repo, stored as a secret in THIS repo.
+            -d '{"event_type":"devlog-updated"}')
+          status="${resp##*$'\n'}"
+          body="${resp%$'\n'*}"
+          echo "HTTP $status"
+          echo "$body"
+          if [ "$status" -lt 200 ] || [ "$status" -ge 300 ]; then
+            echo "::error::dispatch failed (HTTP $status) — check SITE_DISPATCH_TOKEN is set on this repo"
+            exit 1
+          fi
+# SITE_DISPATCH_TOKEN = a fine-grained PAT scoped to just stcksmsh.github.io
+# with "Contents: Read and write" permission, stored as a secret in THIS repo
+# (Settings -> Secrets and variables -> Actions -> New repository secret).
