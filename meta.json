@@ -1,0 +1,11 @@
+{
+  "slug": "beograd-plus-plus",
+  "title": "BeogradPlusPlus",
+  "tagline": "A proof-of-concept exposing weak validation in Belgrade's public transit ticketing system.",
+  "status": "archived",
+  "stack": ["Kotlin", "Python", "Android"],
+  "repo": "https://github.com/stcksmsh/BeogradPlusPlus",
+  "accent": [0.65, 0.19, 25],
+  "featured": false,
+  "order": 6
+}
